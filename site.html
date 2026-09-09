@@ -1,11 +1,1821 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Lar da Criança — Cuidado, aprendizado e tranquilidade</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           CORES PRINCIPAIS
+           ===================================================== */
+
+        :root {
+            --navy: #243746;
+            --teal: #2E7D62;
+            --cream: #FFF4D6;
+            --orange: #F4C95D;
+            --blue: #79B8D1;
+            --green: #6B8E72;
+            --ink: #243746;
+            --muted: #68777e;
+
+            --shadow: 0 18px 60px rgba(36, 55, 70, .12);
+            --radius: 24px;
+        }
+
+
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--ink);
+            background: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .brand,
+        .kicker {
+            font-family: "Playfair Display", serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           BARRA SUPERIOR
+           ===================================================== */
+
+        .topline {
+            background: var(--orange);
+            color: var(--navy);
+            font-size: .82rem;
+            font-weight: 700;
+            padding: 7px 0;
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           MENU
+           ===================================================== */
+
+        header {
+            background: var(--cream);
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            border-bottom: 1px solid rgba(36, 55, 70, .08);
+        }
+
+        .nav {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .brand em {
+            font-style: normal;
+            color: var(--brown);
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            font-weight: 600;
+            font-size: .94rem;
+        }
+
+        .navlinks a {
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .navlinks a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange);
+            transition: .2s;
+        }
+
+        .navlinks a:hover::after {
+            width: 100%;
+        }
+
+        .navbtn {
+            padding: 11px 17px;
+            border-radius: 999px;
+            background: var(--navy);
+            color: var(--cream);
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           HERO / INÍCIO
+           ===================================================== */
+
+        .hero {
+            padding: 34px 0 70px;
+            background: var(--cream);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.04fr .96fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .kicker {
+            display: inline-block;
+            color: var(--brown);
+            font-size: .96rem;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.1rem, 6vw, 5.6rem);
+            line-height: .98;
+            color: var(--navy);
+            max-width: 700px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--teal);
+        }
+
+        .hero p {
+            font-size: 1.12rem;
+            max-width: 590px;
+            color: #41535c;
+            margin-bottom: 28px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 20px;
+            border-radius: 999px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: .2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--teal);
+            color: var(--teal);
+        }
+
+
+        /* =====================================================
+           IMAGEM PRINCIPAL
+           ===================================================== */
+
+        .hero-art {
+            position: relative;
+        }
+
+        .hero-main-img {
+            height: 590px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 34px 34px 110px 34px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-note {
+            position: absolute;
+            left: -24px;
+            bottom: 28px;
+            background: var(--navy);
+            color: white;
+            padding: 20px 22px;
+            border-radius: 20px;
+            width: 240px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-note strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 1.45rem;
+            color: var(--cream);
+        }
+
+        .hero-note small {
+            color: rgba(255,255,255,.78);
+        }
+
+        .ribbon {
+            position: absolute;
+            right: -20px;
+            top: 35px;
+            background: var(--orange);
+            color: var(--navy);
+            padding: 14px 18px;
+            border-radius: 18px;
+            font-weight: 800;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+
+        /* =====================================================
+           INTRODUÇÃO
+           ===================================================== */
+
+        .intro {
+            padding: 28px 0 25px;
+            background: white;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border-top: 1px solid #DCE5E1;
+            border-bottom: 1px solid #DCE5E1;
+        }
+
+        .intro-item {
+            padding: 24px 30px;
+            border-right: 1px solid #DCE5E1;
+        }
+
+        .intro-item:last-child {
+            border-right: 0;
+        }
+
+        .intro-number {
+            font-family: "Playfair Display", serif;
+            font-size: 2.3rem;
+            color: var(--teal);
+        }
+
+        .intro-item p {
+            font-size: .93rem;
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           SEÇÕES
+           ===================================================== */
+
+        .section {
+            padding: 95px 0;
+        }
+
+        .section.white {
+            background: white;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 38px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            font-size: .75rem;
+            font-weight: 800;
+            color: var(--teal);
+            margin-bottom: 8px;
+        }
+
+        .section h2 {
+            font-size: clamp(2.2rem, 4vw, 3.7rem);
+            line-height: 1.05;
+            color: var(--navy);
+            max-width: 720px;
+        }
+
+        .section-head p {
+            max-width: 440px;
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           CARDS
+           ===================================================== */
+
+        .mosaic {
+            display: grid;
+            grid-template-columns: 1.25fr .75fr;
+            gap: 20px;
+        }
+
+        .mosaic-left {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .mosaic-card {
+            background: white;
+            border: 1px solid #DCE5E1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 9px 30px rgba(36,55,70,.06);
+        }
+
+        .mosaic-card.feature {
+            grid-column: 1/-1;
+        }
+
+        .mosaic-card img {
+            width: 100%;
+            height: 215px;
+            object-fit: cover;
+        }
+
+        .mosaic-card.feature img {
+            height: 260px;
+        }
+
+        .mosaic-body {
+            padding: 22px;
+        }
+
+        .mosaic-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .mosaic-card p {
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+
+        .link {
+            color: var(--brown);
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           CARD DA MISSÃO
+           ===================================================== */
+
+        .mosaic-side {
+            background: var(--navy);
+            color: white;
+            border-radius: var(--radius);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100%;
+        }
+
+        .mosaic-side .mini {
+            color: var(--orange);
+            text-transform: uppercase;
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .12em;
+        }
+
+        .mosaic-side h3 {
+            font-size: 2.15rem;
+            line-height: 1.1;
+            margin: 14px 0;
+        }
+
+        .mosaic-side p {
+            color: rgba(255,255,255,.78);
+        }
+
+        .quote {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,.16);
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+        }
+
+
+        /* =====================================================
+           CARROSSEL
+           ===================================================== */
+
+        .carousel-wrap {
+            background: var(--navy);
+            padding: 95px 0;
+        }
+
+        .carousel-title {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+
+        .carousel-title .eyebrow {
+            color: var(--orange);
+        }
+
+        .carousel-title h2 {
+            font-size: clamp(2.3rem, 4vw, 3.5rem);
+            max-width: 650px;
+            line-height: 1.05;
+        }
+
+        .carousel-title p {
+            color: rgba(255,255,255,.78);
+            max-width: 420px;
+        }
+
+        .carousel {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .track {
+            display: flex;
+            transition: transform .55s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 530px;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .58;
+        }
+
+        .slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(0,21,36,.85),
+                rgba(0,21,36,.1)
+            );
+        }
+
+        .slide-content {
+            position: absolute;
+            z-index: 2;
+            left: 7%;
+            bottom: 12%;
+            max-width: 560px;
+            color: white;
+        }
+
+        .slide-content .num {
+            font-family: "Playfair Display", serif;
+            font-size: 1.2rem;
+            color: var(--orange);
+        }
+
+        .slide-content h3 {
+            font-size: clamp(2.3rem, 4vw, 4rem);
+            line-height: 1.02;
+            margin: 10px 0;
+        }
+
+        .slide-content p {
+            color: rgba(255,255,255,.84);
+        }
+
+        .ctrl {
+            position: absolute;
+            right: 28px;
+            bottom: 25px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .ctrl button {
+            width: 46px;
+            height: 46px;
+            border: 0;
+            border-radius: 50%;
+            background: var(--cream);
+            color: var(--navy);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .dots {
+            position: absolute;
+            left: 7%;
+            bottom: 41px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,.35);
+        }
+
+        .dot.active {
+            background: var(--orange);
+        }
+
+
+        /* =====================================================
+           FAMÍLIAS / FORMULÁRIO
+           ===================================================== */
+
+        .volunteer {
+            background: var(--cream);
+        }
+
+        .vol-grid {
+            display: grid;
+            grid-template-columns: .82fr 1.18fr;
+            gap: 44px;
+            align-items: stretch;
+        }
+
+        .vol-panel {
+            background: var(--navy);
+            color: white;
+            border-radius: 28px;
+            padding: 36px;
+        }
+
+        .vol-panel h2 {
+            color: var(--cream);
+            font-size: 3rem;
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .vol-panel p {
+            color: rgba(255,255,255,.80);
+        }
+
+        .vol-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+        }
+
+        .tag {
+            padding: 9px 11px;
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 999px;
+            color: var(--cream);
+            font-size: .85rem;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 28px;
+            padding: 34px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-card h3 {
+            font-size: 1.9rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .form-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field.full {
+            grid-column: 1/-1;
+        }
+
+        .field label {
+            font-size: .83rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            border: 1px solid #DCE5E1;
+            padding: 12px 13px;
+            border-radius: 13px;
+            font: inherit;
+            background: #fff;
+        }
+
+        .field textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            margin-top: 16px;
+            border: 0;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           LOCALIZAÇÃO
+           ===================================================== */
+
+        .location {
+            background: white;
+        }
+
+        .loc-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .loc-copy {
+            background: var(--teal);
+            color: white;
+            border-radius: 28px;
+            padding: 36px;
+        }
+
+        .loc-copy .eyebrow {
+            color: var(--cream);
+        }
+
+        .loc-copy h2 {
+            color: white;
+            font-size: 3rem;
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .loc-copy p {
+            color: rgba(255,255,255,.76);
+        }
+
+        .address-box {
+            margin-top: 28px;
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(0,21,36,.24);
+        }
+
+        .map {
+            min-height: 430px;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid #DCE5E1;
+            box-shadow: var(--shadow);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 430px;
+            border: 0;
+        }
+
+
+        /* =====================================================
+           RODAPÉ
+           ===================================================== */
+
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 35px 0;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            font-family: "Playfair Display", serif;
+            font-size: 1.35rem;
+        }
+
+        .footer-brand span {
+            color: var(--orange);
+        }
+
+        .footer-small {
+            color: rgba(255,255,255,.62);
+            font-size: .84rem;
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE — TABLET
+           ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .navlinks {
+                display: none;
+            }
+
+            .hero-grid,
+            .vol-grid,
+            .loc-grid,
+            .mosaic {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-main-img {
+                height: 460px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-item {
+                border-right: 0;
+                border-bottom: 1px solid #DCE5E1;
+            }
+
+            .intro-item:last-child {
+                border-bottom: 0;
+            }
+
+            .section-head,
+            .carousel-title {
+                display: block;
+            }
+
+            .section-head p,
+            .carousel-title p {
+                margin-top: 14px;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE — CELULAR
+           ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero-main-img {
+                height: 400px;
+            }
+
+            .hero-note {
+                left: 12px;
+                bottom: 12px;
+            }
+
+            .ribbon {
+                display: none;
+            }
+
+            .mosaic-left,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .slide {
+                height: 470px;
+            }
+
+            .slide-content {
+                left: 6%;
+                right: 6%;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
-    
+
+
+    <!-- =====================================================
+         BARRA SUPERIOR
+         ===================================================== -->
+
+    <div class="topline">
+        Um lugar seguro para crianças e mais tranquilidade para toda a família.
+    </div>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <header>
+
+        <div class="container nav">
+
+            <a class="brand" href="index.html">
+                Lar <em>da Criança</em>
+            </a>
+
+            <nav>
+
+                <ul class="navlinks">
+
+                    <li>
+                        <a href="atividades.html">
+                            Atividades
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="historias.html">
+                            Histórias
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="familias.html">
+                            Famílias
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="localizacao.html">
+                            Localização
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <a class="navbtn" href="ajudar.html">
+                Quero ajudar
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+                <div>
+
+                    <div class="kicker">
+                        Cuidar, educar e acolher
+                    </div>
+
+                    <h1>
+                        Uma rede para
+                        <span>acolher</span>,
+                        apoiar e transformar.
+                    </h1>
+
+                    <p>
+                        A Lar da Criança oferece um ambiente seguro,
+                        educativo e acolhedor para que as crianças possam
+                        aprender, brincar e conviver enquanto seus
+                        responsáveis trabalham.
+                    </p>
+
+                    <div class="actions">
+
+                        <a class="btn btn-primary" href="lar.html">
+                            Conheça o Lar
+                        </a>
+
+                        <a class="btn btn-secondary" href="familias.html">
+                            Para as famílias
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-art">
+
+                    <img
+                        class="hero-main-img"
+                        src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1200&q=85"
+                        alt="Crianças em atividade educativa"
+                    >
+
+                    <div class="ribbon">
+                        SOLIDARIEDADE
+                    </div>
+
+                    <div class="hero-note">
+
+                        <strong>
+                            Cuidar é estar presente.
+                        </strong>
+
+                        <small>
+                            Seu tempo, sua doação ou sua participação
+                            ajudam a manter essa rede viva.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TRÊS PILARES
+             ================================================= -->
+
+        <section class="intro">
+
+            <div class="container intro-grid">
+
+                <div class="intro-item">
+
+                    <div class="intro-number">
+                        01
+                    </div>
+
+                    <strong>
+                        Cuidado
+                    </strong>
+
+                    <p>
+                        Um ambiente seguro para a criança brincar,
+                        aprender e conviver.
+                    </p>
+
+                </div>
+
+
+                <div class="intro-item">
+
+                    <div class="intro-number">
+                        02
+                    </div>
+
+                    <strong>
+                        Aprendizado
+                    </strong>
+
+                    <p>
+                        Atividades educativas e momentos de
+                        desenvolvimento.
+                    </p>
+
+                </div>
+
+
+                <div class="intro-item">
+
+                    <div class="intro-number">
+                        03
+                    </div>
+
+                    <strong>
+                        Tranquilidade
+                    </strong>
+
+                    <p>
+                        Pais e responsáveis podem trabalhar sabendo
+                        que seus filhos estão bem cuidados.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             O QUE O LAR OFERECE
+             ================================================= -->
+
+        <section class="section white">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            O que o Lar oferece
+                        </div>
+
+                        <h2>
+                            Um espaço pensado para cuidar de cada criança.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Conheça um pouco mais sobre as atividades,
+                        a rotina e o espaço oferecido pelo Lar da Criança.
+                    </p>
+
+                </div>
+
+
+                <div class="mosaic">
+
+
+                    <div class="mosaic-left">
+
+
+                        <!-- CARD 1 -->
+
+                        <article class="mosaic-card feature">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"
+                                alt="Crianças brincando"
+                            >
+
+                            <div class="mosaic-body">
+
+                                <h3>
+                                    Cuidado no dia a dia
+                                </h3>
+
+                                <p>
+                                    Uma rotina organizada, acolhedora e
+                                    segura para que cada criança tenha
+                                    atenção enquanto seus responsáveis
+                                    trabalham.
+                                </p>
+
+                                <a class="link" href="rotina.html">
+                                    Conhecer a rotina →
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CARD 2 -->
+
+                        <article class="mosaic-card">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+                                alt="Crianças realizando atividade escolar"
+                            >
+
+                            <div class="mosaic-body">
+
+                                <h3>
+                                    Atividades educativas
+                                </h3>
+
+                                <p>
+                                    Brincadeiras, atividades escolares,
+                                    leitura, artes e momentos de convivência
+                                    ajudam no desenvolvimento infantil.
+                                </p>
+
+                                <a class="link" href="atividades.html">
+                                    Ver atividades →
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CARD 3 -->
+
+                        <article class="mosaic-card">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=900&q=80"
+                                alt="Crianças em momento de convivência"
+                            >
+
+                            <div class="mosaic-body">
+
+                                <h3>
+                                    Rotina e convivência
+                                </h3>
+
+                                <p>
+                                    Uma rotina com horários, atividades,
+                                    brincadeiras e convivência ajuda a
+                                    criança a se sentir segura e acolhida.
+                                </p>
+
+                                <a class="link" href="localizacao.html">
+                                    Conhecer o espaço →
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <!-- MISSÃO -->
+
+                    <aside class="mosaic-side">
+
+                        <div>
+
+                            <div class="mini">
+                                Nossa missão
+                            </div>
+
+                            <h3>
+                                Cuidar das crianças para tranquilizar
+                                as famílias.
+                            </h3>
+
+                            <p>
+                                O Lar da Criança existe para oferecer
+                                cuidado, educação, segurança e carinho
+                                enquanto mães, pais e responsáveis
+                                cumprem sua jornada de trabalho.
+                            </p>
+
+                        </div>
+
+                        <div class="quote">
+                            “Criança bem cuidada. Família tranquila.
+                            Comunidade mais forte.”
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CARROSSEL
+             ================================================= -->
+
+        <section class="carousel-wrap">
+
+            <div class="container">
+
+                <div class="carousel-title">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            Nosso dia a dia
+                        </div>
+
+                        <h2>
+                            Um pouco da rotina do Lar da Criança.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Momentos das atividades, brincadeiras,
+                        encontros e experiências das crianças.
+                    </p>
+
+                </div>
+
+
+                <div class="carousel">
+
+                    <div class="track" id="track">
+
+
+                        <!-- SLIDE 1 -->
+
+                        <article class="slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1700&q=85"
+                                alt="Crianças participando de atividade recreativa"
+                            >
+
+                            <div class="slide-content">
+
+                                <div class="num">
+                                    01 — ACOLHIMENTO
+                                </div>
+
+                                <h3>
+                                    Um ambiente acolhedor faz
+                                    a criança se sentir em casa.
+                                </h3>
+
+                                <p>
+                                    Momentos de brincadeira,
+                                    convivência e atenção fazem
+                                    parte da rotina das crianças.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SLIDE 2 -->
+
+                        <article class="slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1700&q=85"
+                                alt="Atividade educativa"
+                            >
+
+                            <div class="slide-content">
+
+                                <div class="num">
+                                    02 — APRENDIZADO
+                                </div>
+
+                                <h3>
+                                    Aprender também pode ser
+                                    uma experiência divertida.
+                                </h3>
+
+                                <p>
+                                    Atividades educativas, jogos,
+                                    leitura e criatividade estimulam
+                                    novas descobertas todos os dias.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SLIDE 3 -->
+
+                        <article class="slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=1700&q=85"
+                                alt="Crianças em momento de convivência"
+                            >
+
+                            <div class="slide-content">
+
+                                <div class="num">
+                                    03 — CONVIVÊNCIA
+                                </div>
+
+                                <h3>
+                                    Crescer junto também faz
+                                    parte de aprender.
+                                </h3>
+
+                                <p>
+                                    A convivência ajuda a desenvolver
+                                    autonomia, amizade, respeito
+                                    e confiança.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- PONTOS -->
+
+                    <div class="dots" id="dots"></div>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="ctrl">
+
+                        <button
+                            onclick="prev()"
+                            aria-label="Slide anterior"
+                        >
+                            ←
+                        </button>
+
+                        <button
+                            onclick="next()"
+                            aria-label="Próximo slide"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FAMÍLIAS
+             ================================================= -->
+
+        <section class="section volunteer">
+
+            <div class="container vol-grid">
+
+
+                <div class="vol-panel">
+
+                    <div class="eyebrow">
+                        Para as famílias
+                    </div>
+
+                    <h2>
+                        Trabalhe tranquilo.
+                        A gente cuida daqui.
+                    </h2>
+
+                    <p>
+                        Enquanto pais e responsáveis trabalham,
+                        o Lar da Criança oferece uma rotina de
+                        cuidado, atividades e acompanhamento para
+                        que eles possam cumprir suas responsabilidades
+                        com mais segurança e tranquilidade.
+                    </p>
+
+                    <div class="vol-tags">
+
+                        <span class="tag">
+                            Rotina segura
+                        </span>
+
+                        <span class="tag">
+                            Atividades
+                        </span>
+
+                        <span class="tag">
+                            Aprendizado
+                        </span>
+
+                        <span class="tag">
+                            Convivência
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORMULÁRIO -->
+
+                <div class="form-card">
+
+                    <h3>
+                        Conheça nossa rotina
+                    </h3>
+
+                    <p>
+                        Deixe seus dados para receber mais informações
+                        sobre horários, atividades e funcionamento.
+                    </p>
+
+                    <form
+                        onsubmit="enviarFormulario(event)"
+                    >
+
+                        <div class="form-grid">
+
+
+                            <div class="field">
+
+                                <label for="nome">
+                                    Nome do responsável
+                                </label>
+
+                                <input
+                                    id="nome"
+                                    type="text"
+                                    placeholder="Nome do responsável"
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="email">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    id="email"
+                                    type="email"
+                                    placeholder="voce@email.com"
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="tipo">
+                                    O que você deseja saber?
+                                </label>
+
+                                <select id="tipo">
+
+                                    <option>
+                                        Rotina segura
+                                    </option>
+
+                                    <option>
+                                        Atividades
+                                    </option>
+
+                                    <option>
+                                        Horários
+                                    </option>
+
+                                    <option>
+                                        Convivência
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="telefone">
+                                    Telefone
+                                </label>
+
+                                <input
+                                    id="telefone"
+                                    type="tel"
+                                    placeholder="(00) 00000-0000"
+                                >
+
+                            </div>
+
+
+                            <div class="field full">
+
+                                <label for="mensagem">
+                                    Mensagem
+                                </label>
+
+                                <textarea
+                                    id="mensagem"
+                                    placeholder="Digite sua mensagem..."
+                                ></textarea>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <button
+                            class="btn btn-primary form-submit"
+                            type="submit"
+                        >
+                            Enviar mensagem
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOCALIZAÇÃO
+             ================================================= -->
+
+        <section class="section location">
+
+            <div class="container loc-grid">
+
+
+                <div class="loc-copy">
+
+                    <div class="eyebrow">
+                        Onde estamos
+                    </div>
+
+                    <h2>
+                        Visite o Lar da Criança.
+                    </h2>
+
+                    <p>
+                        Confira nossa localização e encontre o
+                        Lar da Criança para conhecer o espaço,
+                        conversar com a equipe e saber mais
+                        sobre a rotina.
+                    </p>
+
+                    <div class="address-box">
+
+                        <strong>
+                            Avenida Professora Antonieta da Rocha
+                            Sundfeld Rosso, s/nº
+                        </strong>
+
+                        <br>
+
+                        Bosque Lorenzetti
+
+                        <br>
+
+                        CEP 18900-000
+
+                    </div>
+
+                </div>
+
+
+                <div class="map">
+
+                    <iframe
+                        title="Localização do Lar da Criança"
+                        src="https://www.google.com/maps?q=Avenida%20Professora%20Antonieta%20da%20Rocha%20Sundfeld%20Rosso%2C%20s%2Fn%20-%20Bosque%20Lorenzetti%2C%2018900-000&output=embed"
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer>
+
+        <div class="container footer-row">
+
+            <div class="footer-brand">
+                Lar <span>da Criança</span>
+            </div>
+
+            <div class="footer-small">
+                © 2026 Lar da Criança · Cuidado, aprendizado e tranquilidade.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        /* =========================
+           CARROSSEL
+           ========================= */
+
+        let current = 0;
+
+        const track = document.getElementById("track");
+
+        const total = track.children.length;
+
+        const dots = document.getElementById("dots");
+
+
+        /* Criar os pontos */
+
+        for (let i = 0; i < total; i++) {
+
+            const d = document.createElement("button");
+
+            d.className = "dot" + (i === 0 ? " active" : "");
+
+            d.setAttribute(
+                "aria-label",
+                "Ir para o slide " + (i + 1)
+            );
+
+            d.onclick = () => go(i);
+
+            dots.appendChild(d);
+        }
+
+
+        /* Mostrar slide */
+
+        function render() {
+
+            track.style.transform =
+                `translateX(-${current * 100}%)`;
+
+            [...dots.children].forEach((d, i) => {
+
+                d.classList.toggle(
+                    "active",
+                    i === current
+                );
+
+            });
+
+        }
+
+
+        /* Próximo slide */
+
+        function next() {
+
+            current = (current + 1) % total;
+
+            render();
+
+        }
+
+
+        /* Slide anterior */
+
+        function prev() {
+
+            current = (current - 1 + total) % total;
+
+            render();
+
+        }
+
+
+        /* Ir para um slide específico */
+
+        function go(index) {
+
+            current = index;
+
+            render();
+
+        }
+
+
+        /* Trocar automaticamente */
+
+        setInterval(next, 6500);
+
+
+        /* =========================
+           FORMULÁRIO
+           ========================= */
+
+        function enviarFormulario(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Obrigado! Seu interesse foi registrado."
+            );
+
+        }
+
+    </script>
+
+
 </body>
+
 </html>
+```
