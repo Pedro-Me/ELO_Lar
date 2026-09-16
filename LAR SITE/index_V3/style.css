@@ -1,0 +1,827 @@
+/* ========================================
+   FONTES
+======================================== */
+
+@font-face {
+    font-family: "Le Petit Cochon";
+    src: url("assets/fonts/MoreSugar-Thin.otf") format("truetype");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    
+}
+
+
+@font-face {
+    font-family: "Now";
+    src: url("assets/fonts/NowAlt-Medium.otf") format("opentype");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+
+    --verde: #6B8E72;
+    --azul: #79B8D1;
+    --amarelo: #FFD200;
+    --off-white: #FFF4D5;
+
+    --fonte-titulo: "Le Petit Cochon", sans-serif;
+    --fonte-texto: "Now", Arial, sans-serif;
+
+}
+
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: var(--fonte-texto);
+    background: var(--off-white);
+    color: var(--off-white);
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 20;
+
+}
+
+
+.header-container {
+
+    width: min(90%, 1600px);
+
+    height: 135px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1fr) auto minmax(280px, 1fr);
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+
+
+/* LOGO */
+
+.logo {
+
+    justify-self: start;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.logo img {
+
+    width: 300px;
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+
+/* MENU */
+
+.nav {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 70px;
+
+}
+
+
+.nav a {
+
+    position: relative;
+
+    color: var(--off-white);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 19px;
+
+    white-space: nowrap;
+
+    transition: opacity 0.2s ease;
+
+}
+
+
+.nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -9px;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--amarelo);
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.25s ease;
+
+}
+
+
+.nav a:hover::after {
+
+    transform: scaleX(1);
+
+}
+
+
+
+/* BOTÃO DOAR */
+
+.btn-doar {
+
+    justify-self: end;
+
+    min-width: 180px;
+
+    padding: 17px 29px;
+
+    border-radius: 999px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: var(--amarelo);
+
+    color: #31554a;
+
+    font-size: 17px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.btn-doar:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+
+}
+
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+
+/* FOTO */
+
+.hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("assets/hero.png");
+
+    background-size: cover;
+
+    background-position:
+        center center;
+
+    background-repeat: no-repeat;
+
+    z-index: 0;
+
+}
+
+
+
+/* OVERLAY
+
+   Mais escuro à esquerda,
+   praticamente transparente à direita.
+
+   Isso deixa a foto visível,
+   igual ao wireframe.
+*/
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+
+        linear-gradient(90deg,
+
+            rgba(10, 32, 27, 0.90) 0%,
+
+            rgba(10, 32, 27, 0.76) 28%,
+
+            rgba(10, 32, 27, 0.42) 53%,
+
+            rgba(10, 32, 27, 0.08) 80%,
+
+            rgba(10, 32, 27, 0.02) 100%);
+
+}
+
+
+
+/* CONTAINER */
+
+.hero-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(90%, 1600px);
+
+    margin: 0 auto;
+
+    padding-top: 130px;
+
+}
+
+
+
+/* CONTEÚDO */
+
+.hero-content {
+
+    width: min(670px, 48vw);
+
+}
+
+
+
+/* TEXTO PEQUENO */
+
+.hero-tag {
+
+    display: block;
+
+    margin-bottom: 24px;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    color: var(--off-white);
+
+}
+
+
+
+/* TÍTULO */
+
+.hero h1 {
+
+    font-family:
+        var(--fonte-titulo);
+
+    font-weight: 400;
+
+    font-size:
+        clamp(58px,
+            5.1vw,
+            92px);
+
+    line-height: 0.99;
+
+    letter-spacing: 0;
+
+    color: var(--off-white);
+
+    margin-bottom: 36px;
+
+}
+
+
+
+/* PALAVRA SONHAR */
+
+.hero h1>span {
+
+    display: inline-block;
+
+    position: relative;
+
+    color: var(--amarelo);
+
+}
+
+
+
+/* SUBLINHADO
+
+   Não é doodle.
+   É apenas um detalhe tipográfico
+   abaixo da palavra principal.
+*/
+
+.hero h1>span::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 1%;
+    bottom: -9px;
+
+    width: 89%;
+    height: 5px;
+
+    border-radius: 999px;
+
+    background: var(--amarelo);
+
+}
+
+
+
+/* PARÁGRAFO */
+
+.hero-content>p {
+
+    width: min(520px, 100%);
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    color:
+        rgba(255,
+            244,
+            213,
+            0.92);
+
+    margin-bottom: 15px;
+
+}
+
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+
+/* PRINCIPAL */
+
+.btn-primary {
+
+    min-width: 185px;
+
+    padding: 16px 29px;
+
+    border-radius: 999px;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: var(--amarelo);
+
+    color: #31554a;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.btn-primary:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+
+}
+
+
+
+/* SECUNDÁRIO */
+
+.btn-secondary {
+
+    min-width: 210px;
+
+    padding: 14px 26px;
+
+    border:
+
+        2px solid rgba(255,
+            244,
+            213,
+            0.80);
+
+    border-radius: 999px;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color: var(--off-white);
+
+    font-size: 16px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        rgba(255,
+            244,
+            213,
+            0.10);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.arrow {
+
+    font-size: 21px;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.btn-secondary:hover .arrow {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+
+/* ========================================
+   MENU MOBILE
+======================================== */
+
+.menu-mobile {
+
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+}
+
+
+.menu-mobile span {
+
+    display: block;
+
+    width: 27px;
+    height: 2px;
+
+    margin: 6px auto;
+
+    background:
+        var(--off-white);
+
+}
+
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .header-container {
+
+        grid-template-columns:
+            1fr auto auto;
+
+    }
+
+
+    .logo img {
+
+        width: 320px;
+
+    }
+
+
+    .nav {
+
+        gap: 35px;
+
+    }
+
+
+    .hero-content {
+
+        width: 58vw;
+
+    }
+
+}
+
+
+
+@media (max-width: 850px) {
+
+    .header-container {
+
+        height: 100px;
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+    }
+
+
+    .logo img {
+
+        width: 260px;
+
+    }
+
+
+    .nav,
+    .btn-doar {
+
+        display: none;
+
+    }
+
+
+    .menu-mobile {
+
+        display: block;
+
+    }
+
+
+    .hero {
+
+        min-height: 100svh;
+
+    }
+
+
+    .hero-image {
+
+        background-position:
+            62% center;
+
+    }
+
+
+    .hero-overlay {
+
+        background:
+
+            linear-gradient(90deg,
+
+                rgba(10, 32, 27, .88) 0%,
+
+                rgba(10, 32, 27, .68) 60%,
+
+                rgba(10, 32, 27, .32) 100%);
+
+    }
+
+
+    .hero-container {
+
+        padding-top: 120px;
+
+    }
+
+
+    .hero-content {
+
+        width: 80%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(52px,
+                10vw,
+                75px);
+
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .header-container,
+    .hero-container {
+
+        width: calc(100% - 40px);
+
+    }
+
+
+    .logo img {
+
+        width: 220px;
+
+    }
+
+
+    .hero-content {
+
+        width: 100%;
+
+    }
+
+
+    .hero-tag {
+
+        font-size: 11px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 50px;
+
+        line-height: 1.02;
+
+    }
+
+
+    .hero-content>p {
+
+        font-size: 15px;
+
+        max-width: 390px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        width: 100%;
+
+        max-width: 300px;
+
+    }
+
+}
