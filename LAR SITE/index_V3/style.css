@@ -22,6 +22,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "More Sugar Regular";
+    src: url("assets/fonts/MoreSugar-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}   
+
 
 
 /* ========================================
@@ -277,7 +285,7 @@ button {
     inset: 0;
 
     background-image:
-        url("assets/hero.png");
+        url("assets/img/hero.png");
 
     background-size: cover;
 
@@ -822,6 +830,4648 @@ button {
 
         max-width: 300px;
 
+    }
+
+}
+
+/* ========================================
+   QUEM É O LAR
+======================================== */
+
+.quem-lar {
+
+    position: relative;
+
+    width: 100%;
+
+    background: var(--off-white);
+
+    color: var(--verde);
+
+    padding: 75px 0 78px;
+
+    border-bottom: 5px solid var(--azul);
+
+    overflow: hidden;
+
+}
+
+
+
+/* CONTAINER PRINCIPAL */
+
+.quem-lar-container {
+
+    width: min(84%, 1380px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(430px, 0.95fr)
+        minmax(440px, 1.05fr);
+
+    align-items: center;
+
+    gap: 100px;
+
+}
+
+
+
+/* ========================================
+   IMAGEM
+======================================== */
+
+.quem-lar-imagem {
+
+    width: 100%;
+
+    height: 355px;
+
+    overflow: hidden;
+
+    border-radius:
+        75px
+        75px
+        75px
+        75px;
+
+}
+
+
+.quem-lar-imagem img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.quem-lar-conteudo {
+
+    max-width: 590px;
+
+}
+
+
+
+/* TEXTO PEQUENO */
+
+.quem-lar-tag {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: var(--verde);
+
+}
+
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.quem-lar-conteudo h2 {
+
+    margin: 0 0 25px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        45px,
+        3.4vw,
+        62px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    letter-spacing: 0;
+
+    color: #315d50;
+
+}
+
+
+
+/* ========================================
+   PARÁGRAFO
+======================================== */
+
+.quem-lar-conteudo p {
+
+    width: min(
+        530px,
+        100%
+    );
+
+    margin: 0 0 28px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    color: #263a33;
+
+}
+
+
+
+/* ========================================
+   BOTÃO SAIBA MAIS
+======================================== */
+
+.quem-lar-botao {
+
+    min-width: 155px;
+
+    min-height: 48px;
+
+    padding: 11px 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    border:
+
+        2px solid
+        var(--verde);
+
+    border-radius: 999px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    color: var(--verde);
+
+    background: transparent;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+
+/* SETA */
+
+.quem-lar-botao span {
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+
+/* HOVER */
+
+.quem-lar-botao:hover {
+
+    background: var(--verde);
+
+    color: var(--off-white);
+
+    transform: translateY(-2px);
+
+}
+
+
+.quem-lar-botao:hover span {
+
+    transform: translateX(4px);
+
+}
+
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .quem-lar {
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .quem-lar-container {
+
+        width: min(
+            88%,
+            900px
+        );
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 55px;
+
+    }
+
+
+    .quem-lar-imagem {
+
+        height: 330px;
+
+        border-radius: 55px;
+
+    }
+
+
+    .quem-lar-conteudo h2 {
+
+        font-size: 44px;
+
+    }
+
+}
+
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 750px) {
+
+    .quem-lar {
+
+        padding:
+            55px 0 60px;
+
+    }
+
+
+    .quem-lar-container {
+
+        width: calc(
+            100% - 40px
+        );
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .quem-lar-imagem {
+
+        height: 310px;
+
+        border-radius: 45px;
+
+    }
+
+
+    .quem-lar-conteudo {
+
+        max-width: 100%;
+
+    }
+
+
+    .quem-lar-conteudo h2 {
+
+        font-size: 43px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .quem-lar-conteudo p {
+
+        font-size: 15px;
+
+        max-width: 500px;
+
+    }
+
+}
+
+
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 480px) {
+
+    .quem-lar {
+
+        padding:
+            45px 0 50px;
+
+    }
+
+
+    .quem-lar-imagem {
+
+        height: 245px;
+
+        border-radius: 36px;
+
+    }
+
+
+    .quem-lar-tag {
+
+        font-size: 11px;
+
+    }
+
+
+    .quem-lar-conteudo h2 {
+
+        font-size: 38px;
+
+        line-height: 1.05;
+
+    }
+
+
+    .quem-lar-botao {
+
+        min-width: 145px;
+
+        min-height: 46px;
+
+    }
+
+}
+
+/* ========================================
+   ELEMENTOS GRÁFICOS — QUEM É O LAR
+======================================== */
+
+
+/* Área que segura foto + coração */
+
+.quem-lar-foto-area {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+
+/* ========================================
+   CORAÇÃO
+======================================== */
+
+.elemento-coracao {
+
+    position: absolute;
+
+    width: 105px;
+    height: auto;
+
+    /*
+       Fica parcialmente para fora da foto,
+       no canto inferior esquerdo.
+    */
+
+    left: -52px;
+    bottom: 25px;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    animation:
+        flutuar-coracao
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+
+/* Animação bem suave */
+
+@keyframes flutuar-coracao {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(-4deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(2deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-4deg);
+
+    }
+
+}
+
+
+
+/* ========================================
+   SOL
+======================================== */
+
+.elemento-sol {
+
+    position: absolute;
+
+    width: 120px;
+    height: auto;
+
+    /*
+       Canto superior direito
+       da seção inteira.
+    */
+
+    top: 28px;
+    right: 35px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    animation:
+        flutuar-sol
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+
+/* Movimento diferente do coração
+   para não parecer tudo sincronizado */
+
+@keyframes flutuar-sol {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(8px)
+            rotate(5deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .elemento-coracao {
+        width: 80px;
+        left: -30px;
+        bottom: 20px;
+    }
+
+    .elemento-sol {
+        width: 90px;
+        top: 22px;
+        right: 22px;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .elemento-coracao {
+        width: 72px;
+        left: -12px;
+        bottom: -18px;
+    }
+
+    .elemento-sol {
+        width: 72px;
+        top: 18px;
+        right: 18px;
+        opacity: 0.85;
+    }
+
+}
+
+/* ========================================
+   O QUE FAZEMOS
+======================================== */
+
+.o-que-fazemos {
+
+    width: 100%;
+
+    background: var(--azul);
+
+    padding: 70px 0;
+
+    color: var(--off-white);
+
+    overflow: hidden;
+
+}
+
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.o-que-fazemos-container {
+
+    width: min(88%, 1550px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    /*
+       Parte esquerda menor.
+       Cards ocupam a maior parte.
+    */
+
+    grid-template-columns:
+        minmax(500px, 0.75fr)
+        minmax(800px, 1.7fr);
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+
+
+/* ========================================
+   TEXTO ESQUERDO
+======================================== */
+
+.o-que-fazemos-conteudo {
+
+    max-width: 500px;
+
+}
+
+
+
+/* TEXTO PEQUENO */
+
+.o-que-fazemos-tag {
+
+    display: block;
+
+    margin-bottom: 13px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: var(--off-white);
+
+}
+
+
+
+/* TÍTULO */
+
+.o-que-fazemos-conteudo h2 {
+
+    margin: 0 0 28px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        44px,
+        3.2vw,
+        60px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.04;
+
+    letter-spacing: 0;
+
+    color: var(--off-white);
+
+}
+
+
+
+/* PARÁGRAFO */
+
+.o-que-fazemos-conteudo > p {
+
+    width: min(
+        400px,
+        100%
+    );
+
+    margin: 0 0 30px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    color: rgba(
+        255,
+        244,
+        213,
+        0.92
+    );
+
+}
+
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.o-que-fazemos-botao {
+
+    min-width: 155px;
+
+    min-height: 48px;
+
+    padding: 11px 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    border-radius: 999px;
+
+    background: var(--off-white);
+
+    color: #315d50;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.o-que-fazemos-botao span {
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.o-que-fazemos-botao:hover {
+
+    background: var(--amarelo);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(49, 93, 80, 0.15);
+
+}
+
+
+.o-que-fazemos-botao:hover span {
+
+    transform: translateX(4px);
+
+}
+
+
+
+/* ========================================
+   ÁREA DOS CARDS
+======================================== */
+
+.o-que-fazemos-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    align-items: stretch;
+
+}
+
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.fazer-card {
+
+    position: relative;
+
+    min-height: 285px;
+
+    padding:
+        30px
+        22px
+        25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: var(--off-white);
+
+    color: #315d50;
+
+    border-radius: 22px;
+
+    /*
+       Sombra bem leve.
+       Não queremos deixar com cara
+       de card de aplicativo.
+    */
+
+    box-shadow:
+        0 8px 22px
+        rgba(49, 93, 80, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+
+/* ========================================
+   ANIMAÇÃO DO CARD
+======================================== */
+
+.fazer-card:hover {
+
+    /*
+       Aumenta aproximadamente 5%
+       e sobe um pouco.
+    */
+
+    transform:
+        translateY(-8px)
+        scale(1.05);
+
+    z-index: 5;
+
+    box-shadow:
+        0 18px 35px
+        rgba(49, 93, 80, 0.20);
+
+}
+
+
+
+/* ========================================
+   ÍCONE
+======================================== */
+
+.fazer-card-icone {
+
+    width: 88px;
+    height: 88px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+    
+
+}
+
+
+
+/* IMAGEM DO ÍCONE */
+
+.fazer-card-icone img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    
+
+    display: block;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+
+/* Ícone também reage no hover */
+
+.fazer-card:hover
+.fazer-card-icone img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+
+/* ========================================
+   TÍTULO DO CARD
+======================================== */
+
+.fazer-card h3 {
+
+    margin: 0 0 12px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #315d50;
+
+}
+
+
+
+/* ========================================
+   TEXTO DO CARD
+======================================== */
+
+.fazer-card p {
+
+    width: 100%;
+
+    max-width: 180px;
+
+    margin: 0;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 1.45;
+
+    color: #4b5c56;
+
+}
+
+
+
+/* ========================================
+   TABLET GRANDE
+======================================== */
+
+@media (max-width: 1250px) {
+
+    .o-que-fazemos-container {
+
+        width: min(
+            90%,
+            1100px
+        );
+
+        grid-template-columns:
+            320px
+            1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .o-que-fazemos-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 16px;
+
+    }
+
+
+    .fazer-card {
+
+        min-height: 245px;
+
+    }
+
+}
+
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+    .o-que-fazemos {
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .o-que-fazemos-container {
+
+        width: calc(
+            100% - 40px
+        );
+
+        grid-template-columns:
+            1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .o-que-fazemos-conteudo {
+
+        max-width: 550px;
+
+    }
+
+
+    .o-que-fazemos-conteudo h2 {
+
+        font-size: 48px;
+
+    }
+
+
+    .o-que-fazemos-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 550px) {
+
+    .o-que-fazemos {
+
+        padding:
+            55px 0;
+
+    }
+
+
+    .o-que-fazemos-conteudo h2 {
+
+        font-size: 42px;
+
+    }
+
+
+    .o-que-fazemos-conteudo > p {
+
+        font-size: 15px;
+
+    }
+
+
+    .o-que-fazemos-cards {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .fazer-card {
+
+        min-height: 225px;
+
+        padding:
+            25px
+            20px;
+
+    }
+
+
+    /*
+       No celular não aumentamos tanto
+       porque poderia ultrapassar a tela.
+    */
+
+    .fazer-card:hover {
+
+        transform:
+            translateY(-5px)
+            scale(1.02);
+
+    }
+
+
+    .fazer-card-icone {
+
+        width: 78px;
+        height: 78px;
+
+    }
+
+}
+
+/* ========================================
+   ANIMAÇÃO DOS ÍCONES
+======================================== */
+
+/* Configuração geral */
+.fazer-card-icone img {
+    transform-origin: center;
+
+    will-change: transform;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* ALIMENTAÇÃO */
+.fazer-card:nth-child(1) .fazer-card-icone img {
+    animation: icone-movimento-1 4.2s ease-in-out infinite;
+}
+
+
+/* ACOLHIMENTO */
+.fazer-card:nth-child(2) .fazer-card-icone img {
+    animation: icone-movimento-2 5s ease-in-out infinite;
+}
+
+
+/* ATIVIDADES */
+.fazer-card:nth-child(3) .fazer-card-icone img {
+    animation: icone-movimento-3 4.6s ease-in-out infinite;
+}
+
+
+/* DESENVOLVIMENTO */
+.fazer-card:nth-child(4) .fazer-card-icone img {
+    animation: icone-movimento-4 5.3s ease-in-out infinite;
+}
+
+
+
+/* ========================================
+   MOVIMENTOS
+======================================== */
+
+@keyframes icone-movimento-1 {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    35% {
+        transform: translateY(-4px) rotate(-3deg);
+    }
+
+    70% {
+        transform: translateY(2px) rotate(2deg);
+    }
+}
+
+
+@keyframes icone-movimento-2 {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    40% {
+        transform: translateY(3px) rotate(3deg);
+    }
+
+    75% {
+        transform: translateY(-4px) rotate(-2deg);
+    }
+}
+
+
+@keyframes icone-movimento-3 {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    30% {
+        transform: translateY(-3px) rotate(4deg);
+    }
+
+    65% {
+        transform: translateY(2px) rotate(-3deg);
+    }
+}
+
+
+@keyframes icone-movimento-4 {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    35% {
+        transform: translateY(2px) rotate(-2deg);
+    }
+
+    70% {
+        transform: translateY(-4px) rotate(3deg);
+    }
+}
+
+/* ========================================
+   NOSSA HISTÓRIA
+======================================== */
+
+.nossa-historia {
+
+    position: relative;
+
+    width: 100%;
+
+    background: var(--off-white);
+
+    padding: 85px 0 85px;
+
+    overflow: hidden;
+
+    color: #315d50;
+
+}
+
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.nossa-historia-container {
+
+    width: min(88%, 1450px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(400px, 0.9fr)
+        minmax(520px, 1.1fr);
+
+    gap: 100px;
+
+    align-items: start;
+
+}
+
+
+
+/* ========================================
+   LADO ESQUERDO
+======================================== */
+
+.historia-esquerda {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 55px;
+
+}
+
+
+
+/* INTRO */
+
+.historia-intro {
+
+    padding-top: 0;
+
+}
+
+
+.historia-tag {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: #4f7e71;
+
+}
+
+
+.historia-intro h2 {
+
+    margin: 0 0 25px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        44px,
+        3.2vw,
+        60px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    color: #2f6958;
+
+}
+
+
+.historia-intro > p {
+
+    width: min(460px, 100%);
+
+    margin: 0 0 28px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #344740;
+
+}
+
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.historia-botao {
+
+    min-width: 155px;
+
+    min-height: 48px;
+
+    padding: 11px 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    border: 2px solid var(--verde);
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: var(--verde);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.historia-botao:hover {
+
+    background: var(--verde);
+
+    color: var(--off-white);
+
+    transform: translateY(-2px);
+
+}
+
+
+.historia-botao span {
+
+    transition: transform 0.25s ease;
+
+}
+
+
+.historia-botao:hover span {
+
+    transform: translateX(4px);
+
+}
+
+
+
+/* ========================================
+   FRASES
+======================================== */
+
+.historia-frase {
+
+    width: min(470px, 100%);
+
+    padding: 22px 24px;
+
+    border-left: 4px solid var(--amarelo);
+
+    background: rgba(121, 184, 209, 0.10);
+
+    border-radius: 17px;
+
+}
+
+
+.historia-frase p {
+
+    margin: 0;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #2f6958;
+
+}
+
+
+
+/* ========================================
+   FOTO
+======================================== */
+
+.historia-foto {
+
+    width: min(470px, 100%);
+
+    height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 32px;
+
+}
+
+
+.historia-foto img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+
+/* ========================================
+   LADO DIREITO
+======================================== */
+
+.historia-direita {
+
+    position: relative;
+
+}
+
+
+
+/* ========================================
+   TIMELINE
+======================================== */
+
+.timeline-historia {
+
+    position: relative;
+
+    padding-left: 90px;
+
+}
+
+
+
+/* LINHA CENTRAL */
+
+.timeline-historia::before {
+    display: none;
+}
+
+
+/* LINHA ENTRE OS CÍRCULOS */
+
+.historia-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -60px;
+
+    /*
+       Começa no centro do círculo atual
+    */
+    top: 32px;
+
+    /*
+       Continua até o próximo item
+    */
+    height: calc(100% + 68px);
+
+    width: 4px;
+
+    background: var(--verde);
+
+    opacity: 0.75;
+
+    z-index: 0;
+}
+
+
+/* O ÚLTIMO ITEM NÃO PRECISA DE LINHA */
+
+.historia-item:last-child::before {
+    display: none;
+}
+
+
+
+/* ========================================
+   ITEM
+======================================== */
+
+.historia-item {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 68px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.historia-item:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* ========================================
+   ÍCONES
+======================================== */
+
+.historia-item-icon {
+
+    position: absolute;
+
+    left: -90px;
+
+    top: 0;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 3;
+
+    box-shadow:
+        0 5px 15px
+        rgba(49, 93, 80, 0.14);
+
+}
+
+
+
+/* CORES */
+
+.icone-azul {
+
+    background: var(--azul);
+
+}
+
+
+.icone-amarelo {
+
+    background: var(--amarelo);
+
+}
+
+
+.icone-verde {
+
+    background: var(--verde);
+
+}
+
+
+
+/* PNG POR CIMA */
+
+.historia-item-icon img {
+
+    width: 55%;
+    height: 55%;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+
+/* ========================================
+   CONTEÚDO TIMELINE
+======================================== */
+
+.historia-item-conteudo {
+    padding-top: 2px;
+
+    width: 100%;
+
+    max-width: 560px;
+}
+
+.historia-ano {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #3a7d6b;
+
+}
+
+
+.historia-item-conteudo h3 {
+
+    margin: 0 0 9px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    color: #2f6958;
+
+}
+
+
+.historia-item-conteudo p {
+
+    margin: 0;
+
+    max-width: 520px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    line-height: 1.58;
+
+    color: #33453f;
+
+}
+
+
+
+/* ========================================
+   ANIMAÇÃO AO APARECER
+======================================== */
+
+.historia-item.visivel,
+.historia-reveal.visivel {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+.historia-reveal {
+
+    opacity: 0;
+
+    transform: translateY(24px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+}
+
+
+
+/* ========================================
+   ELEMENTOS DECORATIVOS
+======================================== */
+
+.historia-sol {
+
+    position: absolute;
+
+    width: 75px;
+
+    top: 40px;
+
+    right: 4%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    animation:
+        historia-sol-movimento
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.historia-coracao {
+
+    position: absolute;
+
+    width: 62px;
+
+    left: 3%;
+
+    bottom: 50px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    animation:
+        historia-coracao-movimento
+        4.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+
+/* SOL */
+
+@keyframes historia-sol-movimento {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(7px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+
+/* CORAÇÃO */
+
+@keyframes historia-coracao-movimento {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(3deg);
+
+    }
+
+}
+
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .nossa-historia-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+
+    }
+
+
+    .historia-esquerda {
+
+        gap: 40px;
+
+    }
+
+
+    .historia-foto,
+    .historia-frase {
+
+        width: 100%;
+        max-width: 600px;
+
+    }
+
+
+    .timeline-historia {
+
+        padding-left: 80px;
+
+    }
+
+
+    .historia-item-icon {
+
+        left: -80px;
+
+    }
+
+}
+
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .nossa-historia {
+
+        padding: 65px 0 75px;
+
+    }
+
+
+    .nossa-historia-container {
+
+        width: calc(100% - 40px);
+
+    }
+
+
+    .historia-intro h2 {
+
+        font-size: 42px;
+
+    }
+
+
+    .historia-frase p {
+
+        font-size: 20px;
+
+    }
+
+
+    .historia-foto {
+
+        height: 260px;
+
+    }
+
+
+    .timeline-historia {
+
+        padding-left: 62px;
+
+    }
+
+
+    .timeline-historia::before {
+    content: "";
+
+    position: absolute;
+
+    top: 28px;
+    bottom: 28px;
+
+    left: 31px;
+
+    width: 4px;
+
+    background: var(--verde);
+
+    border-radius: 999px;
+
+    opacity: 0.75;
+}
+
+
+    .historia-item {
+
+        margin-bottom: 48px;
+
+    }
+
+
+    .historia-item-icon {
+
+        width: 52px;
+        height: 52px;
+
+        left: -62px;
+
+    }
+
+
+    .historia-item-conteudo h3 {
+
+        font-size: 24px;
+
+    }
+
+
+    .historia-sol {
+
+        width: 55px;
+
+        right: 15px;
+
+        top: 25px;
+
+    }
+
+
+    .historia-coracao {
+
+        width: 48px;
+
+        left: 12px;
+
+        bottom: 25px;
+
+    }
+
+}
+
+/* ========================================
+   IMPACTO EM NÚMEROS
+======================================== */
+
+.impacto-numeros {
+    position: relative;
+    width: 100%;
+
+    background: var(--verde);
+
+    padding: 48px 0 55px;
+
+    overflow: hidden;
+
+    color: var(--off-white);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.impacto-numeros-container {
+    width: min(90%, 1500px);
+
+    margin: 0 auto;
+
+    position: relative;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.impacto-cabecalho {
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* IMPACTO EM NÚMEROS */
+
+.impacto-tag {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--amarelo);
+}
+
+
+/* FRASE */
+
+.impacto-frase {
+    margin: 0;
+
+    width: min(700px, 100%);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    line-height: 1.18;
+
+    text-align: center;
+
+    color: var(--off-white);
+}
+
+
+/* ========================================
+   ÁREA DOS NÚMEROS
+======================================== */
+
+.impacto-linha {
+    position: relative;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+
+    align-items: start;
+}
+
+
+/* ========================================
+   LINHA
+======================================== */
+
+.impacto-linha::before {
+    content: "";
+
+    position: absolute;
+
+    top: 45px;
+
+    left: 12.5%;
+    right: 12.5%;
+
+    height: 4px;
+
+    background: var(--off-white);
+
+    border-radius: 999px;
+
+    z-index: 0;
+}
+
+/* ========================================
+   ITEM
+======================================== */
+
+.impacto-item {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.impacto-item,
+.impacto-item:first-child,
+.impacto-item:last-child {
+    align-items: center;
+    text-align: center;
+}
+
+
+/* ========================================
+   NÚMEROS
+======================================== */
+
+.impacto-numero {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1px;
+
+    /*
+       O fundo verde interrompe a linha
+       somente exatamente atrás do número.
+    */
+    padding: 0 16px;
+
+    background: var(--verde);
+
+    font-family:
+        "More Sugar Regular",
+        sans-serif;
+
+    font-size:
+        clamp(
+            60px,
+            5vw,
+            90px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    margin-bottom: 15px;
+}
+
+
+
+
+.impacto-numero .contador,
+.impacto-numero .sufixo {
+    display: inline-block;
+}
+
+
+/* ========================================
+   CORES DOS NÚMEROS
+======================================== */
+
+/* 1º e 3º */
+
+.impacto-item:nth-child(1)
+.impacto-numero,
+
+.impacto-item:nth-child(3)
+.impacto-numero {
+    color: var(--amarelo);
+}
+
+
+/* 2º e 4º */
+
+.impacto-item:nth-child(2)
+.impacto-numero,
+
+.impacto-item:nth-child(4)
+.impacto-numero {
+    color: var(--azul);
+}
+
+
+/* ========================================
+   LEGENDAS
+======================================== */
+
+.impacto-item p {
+    margin: 0;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+
+    line-height: 1.35;
+
+    color: var(--off-white);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .impacto-numeros {
+        padding: 45px 0 50px;
+    }
+
+
+    .impacto-cabecalho {
+        margin-bottom: 38px;
+    }
+
+
+    .impacto-frase {
+        max-width: 600px;
+
+        font-size: 25px;
+    }
+
+
+    .impacto-linha {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 38px 25px;
+    }
+
+
+    /*
+       Como passam a existir duas linhas
+       de números, removemos a linha horizontal.
+    */
+
+    .impacto-linha::before {
+        display: none;
+    }
+
+
+    .impacto-item,
+    .impacto-item:first-child,
+    .impacto-item:last-child {
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .impacto-numero,
+    .impacto-item:first-child .impacto-numero,
+    .impacto-item:last-child .impacto-numero {
+        padding: 0;
+
+        background: transparent;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .impacto-numeros {
+        padding: 40px 0 45px;
+    }
+
+
+    .impacto-numeros-container {
+        width: calc(100% - 40px);
+    }
+
+
+    .impacto-cabecalho {
+        margin-bottom: 32px;
+    }
+
+
+    .impacto-tag {
+        font-size: 11px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .impacto-frase {
+        max-width: 360px;
+
+        font-size: 22px;
+
+        line-height: 1.2;
+    }
+
+
+    .impacto-linha {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .impacto-numero {
+        font-size: 60px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .impacto-item p {
+        font-size: 15px;
+    }
+
+}
+
+/* ========================================
+   RELATOS
+======================================== */
+
+.relatos {
+    width: 100%;
+    background: var(--azul);
+    padding: 70px 0 50px;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.relatos-container {
+    width: min(88%, 1500px);
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 0.75fr)
+        minmax(650px, 1.4fr);
+
+    gap: 70px;
+
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.relatos-intro {
+    color: var(--off-white);
+}
+
+
+.relatos-tag {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: #315d50;
+}
+
+
+.relatos-intro h2 {
+    margin: 0 0 25px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        42px,
+        3vw,
+        58px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    color: var(--off-white);
+
+    max-width: 520px;
+}
+
+
+.relatos-intro p {
+    width: min(390px, 100%);
+
+    margin: 0;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+    line-height: 1.55;
+
+    color: var(--off-white);
+}
+
+
+/* ========================================
+   CARROSSEL
+======================================== */
+
+.relatos-carrossel {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   VIEWPORT
+======================================== */
+
+.relatos-viewport {
+    width: 100%;
+
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    border-radius: 38px;
+}
+
+
+.relatos-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ========================================
+   TRACK
+======================================== */
+
+.relatos-track {
+    display: flex;
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.relato-card {
+    flex: 0 0 100%;
+
+    min-width: 0;
+
+    scroll-snap-align: start;
+
+    background: var(--off-white);
+
+    border-radius: 38px;
+
+    padding: 38px 42px;
+
+    display: grid;
+
+    grid-template-columns:
+        170px
+        minmax(0, 1fr);
+
+    gap: 35px;
+
+    align-items: center;
+
+    min-height: 300px;
+}
+
+
+/* ========================================
+   FOTO
+======================================== */
+
+.relato-foto {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    justify-self: center;
+}
+
+
+.relato-foto img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.relato-conteudo {
+    min-width: 0;
+
+    color: #315d50;
+}
+
+
+.relato-aspas {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: Georgia, serif;
+
+    font-size: 70px;
+    line-height: 0.7;
+
+    color: var(--verde);
+}
+
+
+.relato-texto {
+    margin: 0 0 20px;
+
+    max-width: 520px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 18px;
+    line-height: 1.45;
+
+    color: #315d50;
+}
+
+
+.relato-pessoa {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.relato-pessoa strong {
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #315d50;
+}
+
+
+.relato-pessoa span {
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    color: #5b7169;
+}
+
+
+/* ========================================
+   SETAS
+======================================== */
+
+.relato-seta {
+    flex: 0 0 auto;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    border: 2px solid #315d50;
+
+    background: transparent;
+
+    color: #315d50;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.relato-seta:hover {
+    background: var(--off-white);
+
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   INDICADORES
+======================================== */
+
+.relatos-indicadores {
+    grid-column: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 15px;
+}
+
+
+.relato-indicador {
+    width: 10px;
+    height: 10px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(
+        49,
+        93,
+        80,
+        0.28
+    );
+
+    cursor: pointer;
+
+    padding: 0;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.relato-indicador.ativo {
+    background: #315d50;
+
+    transform: scale(1.2);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .relatos {
+        padding: 65px 0 70px;
+    }
+
+
+    .relatos-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .relatos-intro {
+        max-width: 650px;
+    }
+
+
+    .relatos-indicadores {
+        grid-column: 1;
+
+        margin-top: 0;
+    }
+
+
+    .relatos-carrossel {
+        width: 100%;
+    }
+
+
+    .relato-card {
+        min-height: 280px;
+
+        grid-template-columns:
+            150px
+            minmax(0, 1fr);
+
+        gap: 28px;
+
+        padding: 34px;
+    }
+
+
+    .relato-foto {
+        width: 130px;
+        height: 130px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .relatos {
+        padding: 55px 0 60px;
+    }
+
+
+    .relatos-container {
+        width: calc(100% - 40px);
+
+        gap: 35px;
+    }
+
+
+    .relatos-intro h2 {
+        font-size: 42px;
+
+        max-width: 100%;
+    }
+
+
+    .relatos-intro p {
+        font-size: 15px;
+
+        max-width: 100%;
+    }
+
+
+    .relatos-carrossel {
+        gap: 8px;
+    }
+
+
+    .relato-seta {
+        width: 38px;
+        height: 38px;
+
+        font-size: 16px;
+    }
+
+
+    .relato-card {
+        flex: 0 0 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 28px 22px;
+
+        min-height: auto;
+
+        text-align: center;
+    }
+
+
+    .relato-foto {
+        width: 115px;
+        height: 115px;
+
+        margin: 0 auto;
+    }
+
+
+    .relato-aspas {
+        font-size: 58px;
+    }
+
+
+    .relato-texto {
+        font-size: 16px;
+
+        margin-inline: auto;
+    }
+
+
+    .relato-pessoa {
+        align-items: center;
+    }
+
+
+    .relatos-indicadores {
+        margin-top: 4px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 480px) {
+
+    .relatos-container {
+        width: calc(100% - 28px);
+    }
+
+
+    .relatos-intro h2 {
+        font-size: 36px;
+    }
+
+
+    .relatos-carrossel {
+        gap: 6px;
+    }
+
+
+    .relato-seta {
+        width: 34px;
+        height: 34px;
+
+        font-size: 14px;
+    }
+
+
+    .relato-card {
+        padding: 24px 18px;
+
+        border-radius: 28px;
+    }
+
+
+    .relato-foto {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .relato-texto {
+        font-size: 15px;
+    }
+
+}
+
+/* ========================================
+   AÇÕES E MOMENTOS
+======================================== */
+
+.acoes-momentos {
+    width: 100%;
+
+    background: var(--off-white);
+
+    padding: 65px 0 72px;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.acoes-momentos-container {
+    width: min(88%, 1500px);
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.acoes-cabecalho {
+    margin-bottom: 32px;
+}
+
+
+/* TAG */
+
+.acoes-tag {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: var(--verde);
+}
+
+
+/* TÍTULO */
+
+.acoes-cabecalho h2 {
+    margin: 0;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        42px,
+        3vw,
+        58px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    color: #315d50;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.acoes-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+    align-items: start;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.acao-card {
+    position: relative;
+
+    min-width: 0;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* HOVER DO CARD */
+
+.acao-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.035);
+
+    z-index: 3;
+}
+
+
+/* ========================================
+   IMAGEM
+======================================== */
+
+.acao-imagem {
+    width: 100%;
+
+    height: 215px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background: #e8e0c7;
+
+    transition:
+        box-shadow 0.3s ease;
+}
+
+
+.acao-imagem img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.3s ease;
+}
+
+
+/* DESTAQUE NO HOVER */
+
+.acao-card:hover .acao-imagem {
+    box-shadow:
+        0 16px 30px
+        rgba(49, 93, 80, 0.18);
+}
+
+
+.acao-card:hover .acao-imagem img {
+    transform: scale(1.07);
+
+    filter:
+        saturate(1.06)
+        brightness(1.02);
+}
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.acao-conteudo {
+    padding:
+        14px
+        4px
+        0;
+}
+
+
+/* TÍTULO DO CARD */
+
+.acao-conteudo h3 {
+    margin: 0 0 6px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #315d50;
+}
+
+
+/* DESCRIÇÃO */
+
+.acao-conteudo p {
+    margin: 0;
+
+    max-width: 230px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    color: #3f514b;
+}
+
+
+/* ========================================
+   TABLET GRANDE
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .acoes-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            34px
+            22px;
+    }
+
+
+    .acao-imagem {
+        height: 250px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .acoes-momentos {
+        padding:
+            55px 0 60px;
+    }
+
+
+    .acoes-momentos-container {
+        width: calc(100% - 40px);
+    }
+
+
+    .acoes-cabecalho {
+        margin-bottom: 26px;
+    }
+
+
+    .acoes-cabecalho h2 {
+        font-size: 42px;
+    }
+
+
+    .acoes-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .acao-imagem {
+        height: 230px;
+
+        border-radius: 20px;
+    }
+
+
+    .acao-card:hover {
+        transform:
+            translateY(-5px)
+            scale(1.015);
+    }
+
+
+    .acao-conteudo h3 {
+        font-size: 17px;
+    }
+
+
+    .acao-conteudo p {
+        max-width: 100%;
+
+        font-size: 14px;
+    }
+
+}
+
+/* ========================================
+   COMO VOCÊ PODE AJUDAR
+======================================== */
+
+.como-ajudar {
+    width: 100%;
+
+    background: var(--verde);
+
+    padding: 68px 0 75px;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.como-ajudar-container {
+    width: min(88%, 1500px);
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.como-ajudar-cabecalho {
+    display: block;
+
+    margin-bottom: 38px;
+}
+
+
+/* TAG */
+
+.como-ajudar-tag {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: var(--amarelo);
+}
+
+
+/* TÍTULO */
+
+.como-ajudar-titulo h2 {
+    margin: 0;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        42px,
+        3vw,
+        58px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    color: var(--off-white);
+}
+
+
+/* TEXTO DIREITO */
+
+.como-ajudar-intro {
+    margin-top: 22px;
+}
+
+
+.como-ajudar-intro p {
+    margin: 0;
+
+    width: min(500px, 100%);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    color: var(--off-white);
+}
+
+
+/* ========================================
+   GRID DOS CARDS
+======================================== */
+
+.como-ajudar-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.ajuda-card {
+    min-height: 300px;
+
+    padding: 26px 26px 22px;
+
+    border-radius: 26px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* CORES */
+
+.ajuda-card-amarelo {
+    background: var(--amarelo);
+
+    color: #315d50;
+}
+
+
+.ajuda-card-azul {
+    background: var(--azul);
+
+    color: #315d50;
+}
+
+
+.ajuda-card-claro {
+    background: var(--off-white);
+
+    color: #315d50;
+}
+
+
+/* HOVER */
+
+.ajuda-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.025);
+
+    box-shadow:
+        0 16px 30px
+        rgba(28, 65, 54, 0.18);
+}
+
+
+/* ========================================
+   ÍCONE
+======================================== */
+
+.ajuda-icone {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.ajuda-icone img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.ajuda-card:hover .ajuda-icone img {
+    transform:
+        scale(1.08)
+        rotate(3deg);
+}
+
+
+/* ========================================
+   TÍTULO DOS CARDS
+======================================== */
+
+.ajuda-card h3 {
+    margin: 0 0 10px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #315d50;
+}
+
+
+/* ========================================
+   TEXTO DOS CARDS
+======================================== */
+
+.ajuda-card p {
+    margin: 0 0 22px;
+
+    max-width: 220px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    color: #315d50;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+/* ========================================
+   BOTÕES DOS CARDS
+======================================== */
+
+.ajuda-botao {
+    margin-top: auto;
+
+    min-height: 42px;
+
+    padding: 9px 18px;
+
+    border-radius: 999px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    /* PADRÃO: TODOS OFF-WHITE */
+    background: var(--off-white);
+
+    color: var(--verde);
+
+    border: 2px solid transparent;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* SETA */
+
+.ajuda-botao span {
+    transition: transform 0.25s ease;
+}
+
+
+.ajuda-botao:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   HOVER — CARD AMARELO
+   BOTÃO VIRA AZUL
+======================================== */
+
+.ajuda-card-amarelo .ajuda-botao:hover {
+    background: var(--azul);
+
+    color: var(--off-white);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   HOVER — CARD AZUL
+   BOTÃO VIRA AMARELO
+======================================== */
+
+.ajuda-card-azul .ajuda-botao:hover {
+    background: var(--amarelo);
+
+    color: var(--off-white);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   HOVER — CARDS OFF-WHITE
+   BOTÃO VIRA VERDE
+======================================== */
+
+.ajuda-card-claro .ajuda-botao:hover {
+    background: var(--verde);
+
+    color: var(--off-white);
+
+    transform: translateY(-2px);
+}
+
+
+/* BOTÃO CONTORNO */
+
+.ajuda-botao-contorno {
+    border: 2px solid var(--verde);
+
+    color: var(--verde);
+
+    background: transparent;
+}
+
+
+/* HOVER */
+
+.ajuda-botao:hover {
+    transform: translateY(-2px);
+}
+
+
+.ajuda-botao-contorno:hover {
+    background: var(--verde);
+
+    color: var(--off-white);
+}
+
+
+.ajuda-botao span {
+    transition: transform 0.25s ease;
+}
+
+
+.ajuda-botao:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .como-ajudar-cabecalho {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .como-ajudar-intro p {
+        max-width: 550px;
+    }
+
+
+    .como-ajudar-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .como-ajudar {
+        padding:
+            55px 0 60px;
+    }
+
+
+    .como-ajudar-container {
+        width: calc(100% - 40px);
+    }
+
+
+    .como-ajudar-cabecalho {
+        margin-bottom: 30px;
+    }
+
+
+    .como-ajudar-titulo h2 {
+        font-size: 42px;
+    }
+
+
+    .como-ajudar-intro p {
+        font-size: 15px;
+    }
+
+
+    .como-ajudar-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .ajuda-card {
+        min-height: 260px;
+    }
+
+
+    .ajuda-card:hover {
+        transform:
+            translateY(-5px)
+            scale(1.01);
+    }
+
+}
+
+/* ========================================
+   INSTAGRAM + LOCALIZAÇÃO
+======================================== */
+
+.conheca-lar {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    align-items: stretch;
+}
+
+
+/* ========================================
+   DUAS METADES COM A MESMA ALTURA
+======================================== */
+
+.conheca-instagram,
+.conheca-localizacao {
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   INSTAGRAM
+======================================== */
+
+.conheca-instagram {
+    background: var(--azul);
+
+    padding: 55px 5.5%;
+}
+
+
+.instagram-conteudo {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.9fr)
+        minmax(360px, 1.1fr);
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+
+/* TAG */
+
+.conheca-tag {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: var(--amarelo);
+}
+
+
+/* TÍTULO */
+
+.instagram-texto h2 {
+    margin: 0 0 20px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        40px,
+        2.8vw,
+        54px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    color: var(--off-white);
+}
+
+
+/* PARÁGRAFO */
+
+.instagram-texto > p {
+    margin: 0 0 22px;
+
+    max-width: 360px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: var(--off-white);
+}
+
+
+/* ========================================
+   PERFIL
+======================================== */
+
+.instagram-perfil {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    color: var(--off-white);
+}
+
+
+.instagram-icone {
+    width: 34px;
+    height: 34px;
+
+    border: 3px solid var(--amarelo);
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--amarelo);
+
+    font-size: 22px;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.instagram-botao {
+    min-height: 45px;
+
+    padding: 10px 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    border-radius: 999px;
+
+    background: var(--amarelo);
+
+    color: var(--verde);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.instagram-botao:hover {
+    transform: translateY(-3px);
+
+    background: var(--off-white);
+}
+
+
+.instagram-botao span {
+    transition: transform 0.25s ease;
+}
+
+
+.instagram-botao:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   GRID INSTAGRAM - 4 FOTOS
+======================================== */
+
+.instagram-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+/* FOTO */
+
+.instagram-foto {
+    aspect-ratio: 1 / 1;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.instagram-foto img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* HOVER */
+
+.instagram-foto:hover {
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 12px 25px
+        rgba(49, 93, 80, 0.2);
+}
+
+
+.instagram-foto:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   LOCALIZAÇÃO
+======================================== */
+
+.conheca-localizacao {
+    background: var(--off-white);
+
+    padding: 55px 5.5%;
+}
+
+
+.localizacao-conteudo {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, 0.85fr)
+        minmax(340px, 1.15fr);
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+
+/* TAG */
+
+.localizacao-tag {
+    color: var(--verde);
+}
+
+
+/* TÍTULO */
+
+.localizacao-texto h2 {
+    margin: 0 0 18px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(
+        40px,
+        2.8vw,
+        54px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    color: #315d50;
+}
+
+
+/* ENDEREÇO */
+
+.localizacao-texto p {
+    margin: 0 0 28px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: #315d50;
+}
+
+
+/* ========================================
+   BOTÃO MAPA
+======================================== */
+
+.mapa-botao {
+    min-height: 45px;
+
+    padding: 10px 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    border-radius: 999px;
+
+    background: var(--verde);
+
+    color: var(--off-white);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.mapa-botao:hover {
+    transform: translateY(-3px);
+
+    background: var(--azul);
+}
+
+
+.mapa-botao span {
+    transition: transform 0.25s ease;
+}
+
+
+.mapa-botao:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   MAPA
+======================================== */
+
+.mapa {
+    width: 100%;
+
+    height: 320px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: var(--azul);
+}
+
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1150px) {
+
+    .conheca-lar {
+        grid-template-columns: 1fr;
+    }
+
+
+    .conheca-instagram,
+    .conheca-localizacao {
+        min-height: auto;
+
+        padding:
+            55px
+            7%;
+    }
+
+
+    .instagram-conteudo,
+    .localizacao-conteudo {
+        width: min(100%, 950px);
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .conheca-instagram,
+    .conheca-localizacao {
+        padding:
+            50px
+            20px;
+    }
+
+
+    .instagram-conteudo,
+    .localizacao-conteudo {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .instagram-texto h2,
+    .localizacao-texto h2 {
+        font-size: 42px;
+    }
+
+
+    .instagram-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .mapa {
+        height: 280px;
+    }
+
+}
+
+/* ========================================
+   RODAPÉ FINAL
+======================================== */
+
+.footer-lar {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    color: var(--off-white);
+
+    background-image:
+        linear-gradient(
+            rgba(107, 142, 114, 0.90),
+            rgba(107, 142, 114, 0.90)
+        ),
+        url("assets/img/hero.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* OVERLAY EXTRA OPCIONAL */
+
+.footer-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(49, 93, 80, 0.18),
+            rgba(49, 93, 80, 0.10)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.footer-lar-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(88%, 1500px);
+
+    margin: 0 auto;
+
+    padding: 70px 0 30px;
+}
+
+
+/* ========================================
+   TOPO
+======================================== */
+
+.footer-topo {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+    margin-bottom: 38px;
+}
+
+
+.footer-tag {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: var(--amarelo);
+}
+
+
+.footer-topo-texto h2 {
+    margin: 0 0 16px;
+
+    max-width: 650px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(40px, 3vw, 58px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    color: var(--off-white);
+}
+
+
+.footer-topo-texto p {
+    margin: 0;
+
+    max-width: 540px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 244, 213, 0.95);
+}
+
+
+/* BOTÃO */
+
+.footer-topo-acao {
+    display: flex;
+
+    justify-content: flex-start;
+}
+
+
+.footer-doar-botao {
+    min-height: 50px;
+
+    padding: 12px 24px;
+
+    border-radius: 999px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    background: var(--amarelo);
+
+    color: var(--verde);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.footer-doar-botao:hover {
+    transform: translateY(-3px);
+
+    background: var(--off-white);
+}
+
+
+.footer-doar-botao span {
+    transition: transform 0.25s ease;
+}
+
+
+.footer-doar-botao:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   DIVISOR
+======================================== */
+
+.footer-divisor {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 0 0 34px;
+
+    background: rgba(255, 244, 213, 0.22);
+}
+
+
+/* ========================================
+   INFOS
+======================================== */
+
+.footer-infos {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr
+        0.9fr
+        1fr;
+
+    gap: 35px;
+
+    align-items: start;
+
+    margin-bottom: 28px;
+}
+
+
+.footer-col h3 {
+    margin: 0 0 14px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: var(--off-white);
+}
+
+
+.footer-col p,
+.footer-col li,
+.footer-col a {
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    color: rgba(255, 244, 213, 0.92);
+}
+
+
+.footer-col ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.footer-col li {
+    margin-bottom: 6px;
+}
+
+
+.footer-col a:hover {
+    color: var(--amarelo);
+}
+
+
+/* ========================================
+   MARCA
+======================================== */
+
+.footer-logo {
+    width: 190px;
+    max-width: 100%;
+
+    display: block;
+
+    margin-bottom: 14px;
+}
+
+
+.footer-descricao {
+    max-width: 260px;
+
+    margin: 0;
+}
+
+
+/* ========================================
+   BOTTOM
+======================================== */
+
+.footer-bottom {
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 244, 213, 0.15);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    color: rgba(255, 244, 213, 0.9);
+}
+
+
+.footer-redes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.footer-redes a {
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    color: var(--off-white);
+}
+
+
+.footer-redes a:hover {
+    color: var(--amarelo);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .footer-topo {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+    }
+
+
+    .footer-infos {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 30px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .footer-lar-container {
+        width: calc(100% - 40px);
+
+        padding: 55px 0 24px;
+    }
+
+
+    .footer-topo-texto h2 {
+        font-size: 42px;
+    }
+
+
+    .footer-topo-texto p {
+        font-size: 15px;
+    }
+
+
+    .footer-infos {
+        grid-template-columns: 1fr;
+
+        gap: 26px;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
     }
 
 }
