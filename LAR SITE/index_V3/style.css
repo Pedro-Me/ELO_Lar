@@ -65,6 +65,10 @@ html {
     scroll-behavior: smooth;
 }
 
+section {
+    scroll-margin-top: 90px;
+}
+
 
 body {
     font-family: var(--fonte-texto);
@@ -285,7 +289,7 @@ button {
     inset: 0;
 
     background-image:
-        url("assets/img/hero.png");
+        url("assets/img/hero.jpeg");
 
     background-size: cover;
 
@@ -5093,7 +5097,7 @@ button {
             rgba(107, 142, 114, 0.90),
             rgba(107, 142, 114, 0.90)
         ),
-        url("assets/img/hero.png");
+        url("assets/img/hero.jpeg");
 
     background-size: cover;
     background-position: center;
@@ -5472,6 +5476,2910 @@ button {
         flex-direction: column;
 
         align-items: flex-start;
+    }
+
+}
+
+/* ========================================
+   MODAL DE DOAÇÃO
+======================================== */
+
+body.modal-aberto {
+    overflow: hidden;
+}
+
+
+.doacao-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.doacao-modal.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========================================
+   OVERLAY
+======================================== */
+
+.doacao-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(29, 57, 48, 0.72);
+
+    backdrop-filter: blur(7px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+
+.doacao-modal.ativo
+.doacao-modal-overlay {
+    opacity: 1;
+}
+
+
+/* ========================================
+   JANELA
+======================================== */
+
+.doacao-modal-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(720px, 100%);
+
+    max-height: calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    padding:
+        42px
+        46px;
+
+    background:
+        var(--off-white);
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(21, 50, 40, 0.25);
+
+    transform:
+        translateY(35px)
+        scale(0.96);
+
+    opacity: 0;
+
+    transition:
+        transform 0.4s
+        cubic-bezier(.2,.8,.2,1),
+        opacity 0.35s ease;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--verde)
+        transparent;
+}
+
+
+.doacao-modal.ativo
+.doacao-modal-box {
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   FECHAR
+======================================== */
+
+.doacao-fechar {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(107, 142, 114, 0.12);
+
+    color: var(--verde);
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.doacao-fechar:hover {
+    background: var(--amarelo);
+
+    transform: rotate(5deg);
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.doacao-modal-header {
+    padding-right: 45px;
+
+    margin-bottom: 30px;
+}
+
+
+.doacao-modal-tag {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: var(--verde);
+}
+
+
+.doacao-modal-header h2,
+.doacao-sucesso h2 {
+    margin:
+        0
+        0
+        14px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size:
+        clamp(
+            36px,
+            4vw,
+            48px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.04;
+
+    color: #315d50;
+}
+
+
+.doacao-modal-header p,
+.doacao-sucesso p {
+    margin: 0;
+
+    max-width: 540px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: #4b6259;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.doacao-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* ========================================
+   VALORES
+======================================== */
+
+.doacao-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #315d50;
+}
+
+
+.doacao-valores {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.valor-doacao {
+    min-height: 48px;
+
+    padding: 10px;
+
+    border:
+        2px solid
+        rgba(107, 142, 114, 0.35);
+
+    border-radius: 15px;
+
+    background: transparent;
+
+    color: var(--verde);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.valor-doacao:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--verde);
+}
+
+
+.valor-doacao.ativo {
+    background: var(--amarelo);
+
+    border-color: var(--amarelo);
+
+    color: #315d50;
+}
+
+
+/* OUTRO VALOR */
+
+.valor-personalizado {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border:
+        2px solid
+        rgba(107, 142, 114, 0.25);
+
+    border-radius: 15px;
+
+    padding:
+        0
+        15px;
+
+    transition:
+        border-color 0.25s ease;
+}
+
+
+.valor-personalizado:focus-within {
+    border-color: var(--verde);
+}
+
+
+.valor-personalizado span {
+    font-family: var(--fonte-texto);
+
+    color: var(--verde);
+
+    font-weight: 700;
+}
+
+
+.valor-personalizado input {
+    flex: 1;
+
+    height: 48px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    color: #315d50;
+}
+
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+.doacao-campos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.doacao-campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.doacao-campo-completo {
+    width: 100%;
+}
+
+
+.doacao-campo label {
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #315d50;
+}
+
+
+.doacao-campo label span {
+    font-weight: 400;
+
+    opacity: 0.7;
+}
+
+
+.doacao-campo input,
+.doacao-campo select,
+.doacao-campo textarea {
+    width: 100%;
+
+    border:
+        2px solid
+        rgba(107, 142, 114, 0.22);
+
+    border-radius: 14px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.40
+        );
+
+    padding:
+        13px
+        14px;
+
+    outline: 0;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    color: #315d50;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.doacao-campo textarea {
+    resize: vertical;
+
+    min-height: 90px;
+}
+
+
+.doacao-campo input:focus,
+.doacao-campo select:focus,
+.doacao-campo textarea:focus {
+    border-color: var(--verde);
+
+    background: white;
+}
+
+
+/* ========================================
+   CHECKBOX
+======================================== */
+
+.doacao-checkbox {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    color: #4b6259;
+}
+
+
+.doacao-checkbox input {
+    position: absolute;
+
+    opacity: 0;
+}
+
+
+.check-custom {
+    flex: 0 0 auto;
+
+    width: 19px;
+    height: 19px;
+
+    border:
+        2px solid
+        var(--verde);
+
+    border-radius: 6px;
+
+    position: relative;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.doacao-checkbox
+input:checked
++
+.check-custom {
+    background:
+        var(--verde);
+}
+
+
+.doacao-checkbox
+input:checked
++
+.check-custom::after {
+    content: "✓";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--off-white);
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   ENVIAR
+======================================== */
+
+.doacao-enviar {
+    width: 100%;
+
+    min-height: 52px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: var(--verde);
+
+    color: var(--off-white);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.doacao-enviar:hover {
+    background: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+
+.doacao-enviar span {
+    transition:
+        transform 0.25s ease;
+}
+
+
+.doacao-enviar:hover span {
+    transform:
+        translateX(4px);
+}
+
+
+.doacao-observacao {
+    margin:
+        -12px
+        0
+        0;
+
+    text-align: center;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 11px;
+
+    color: #718079;
+}
+
+
+/* ========================================
+   SUCESSO
+======================================== */
+
+.doacao-sucesso {
+    display: none;
+
+    padding:
+        35px
+        10px
+        15px;
+
+    text-align: center;
+}
+
+
+.doacao-sucesso.ativo {
+    display: block;
+
+    animation:
+        doacaoSucessoEntrada
+        0.5s ease;
+}
+
+
+@keyframes doacaoSucessoEntrada {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.doacao-sucesso-icone {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto
+        20px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        var(--amarelo);
+
+    color: var(--verde);
+
+    font-size: 32px;
+}
+
+
+.doacao-sucesso p {
+    margin:
+        0 auto
+        25px;
+}
+
+
+.doacao-voltar {
+    min-height: 46px;
+
+    padding:
+        10px
+        22px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--off-white);
+
+    font-family:
+        var(--fonte-texto);
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.doacao-voltar:hover {
+    background:
+        var(--azul);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .doacao-modal {
+        padding: 12px;
+    }
+
+
+    .doacao-modal-box {
+        padding:
+            36px
+            22px
+            28px;
+
+        border-radius: 26px;
+    }
+
+
+    .doacao-modal-header {
+        padding-right: 35px;
+    }
+
+
+    .doacao-modal-header h2 {
+        font-size: 36px;
+    }
+
+
+    .doacao-valores {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .doacao-campos-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+/* ========================================
+   MODAL DE PARCERIA
+======================================== */
+
+.parceria-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.parceria-modal.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* FUNDO */
+
+.parceria-modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(29, 57, 48, 0.72);
+
+    backdrop-filter: blur(7px);
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.parceria-modal.ativo
+.parceria-modal-overlay {
+    opacity: 1;
+}
+
+
+/* ========================================
+   JANELA
+======================================== */
+
+.parceria-modal-box {
+    position: relative;
+    z-index: 2;
+
+    width: min(760px, 100%);
+
+    max-height: calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    padding: 42px 46px;
+
+    background: var(--off-white);
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(21, 50, 40, 0.25);
+
+    transform:
+        translateY(35px)
+        scale(0.96);
+
+    opacity: 0;
+
+    transition:
+        transform 0.4s cubic-bezier(.2,.8,.2,1),
+        opacity 0.35s ease;
+}
+
+
+.parceria-modal.ativo
+.parceria-modal-box {
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   FECHAR
+======================================== */
+
+.parceria-fechar {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(121, 184, 209, 0.18);
+
+    color: var(--verde);
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.parceria-fechar:hover {
+    background: var(--azul);
+
+    color: var(--off-white);
+
+    transform: rotate(5deg);
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.parceria-modal-header {
+    padding-right: 45px;
+
+    margin-bottom: 30px;
+}
+
+
+.parceria-modal-tag {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: var(--azul);
+}
+
+
+.parceria-modal-header h2,
+.parceria-sucesso h2 {
+    margin:
+        0
+        0
+        14px;
+
+    font-family: var(--fonte-titulo);
+
+    font-size:
+        clamp(
+            36px,
+            4vw,
+            48px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.04;
+
+    color: #315d50;
+}
+
+
+.parceria-modal-header p,
+.parceria-sucesso p {
+    margin: 0;
+
+    max-width: 570px;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: #4b6259;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.parceria-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 26px;
+}
+
+
+/* SEÇÕES */
+
+.parceria-secao {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.parceria-secao-titulo {
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #315d50;
+}
+
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+.parceria-campos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.parceria-campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.parceria-campo-completo {
+    width: 100%;
+}
+
+
+.parceria-campo label {
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #315d50;
+}
+
+
+.parceria-campo input,
+.parceria-campo select,
+.parceria-campo textarea {
+    width: 100%;
+
+    border:
+        2px solid
+        rgba(121, 184, 209, 0.32);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.42);
+
+    padding: 13px 14px;
+
+    outline: 0;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 14px;
+
+    color: #315d50;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.parceria-campo textarea {
+    resize: vertical;
+
+    min-height: 100px;
+}
+
+
+.parceria-campo input:focus,
+.parceria-campo select:focus,
+.parceria-campo textarea:focus {
+    border-color: var(--azul);
+
+    background: #fff;
+}
+
+
+/* ========================================
+   OPÇÕES DE PARCERIA
+======================================== */
+
+.parceria-opcoes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.parceria-opcao {
+    min-height: 48px;
+
+    padding: 10px 14px;
+
+    border:
+        2px solid
+        rgba(121, 184, 209, 0.35);
+
+    border-radius: 15px;
+
+    background: transparent;
+
+    color: #315d50;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.parceria-opcao:hover {
+    border-color: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+
+.parceria-opcao.ativo {
+    background: var(--azul);
+
+    border-color: var(--azul);
+
+    color: var(--off-white);
+}
+
+
+/* ========================================
+   CHECKBOX
+======================================== */
+
+.parceria-checkbox {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    font-family: var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    color: #4b6259;
+}
+
+
+.parceria-checkbox input {
+    position: absolute;
+
+    opacity: 0;
+}
+
+
+.parceria-check-custom {
+    flex: 0 0 auto;
+
+    width: 19px;
+    height: 19px;
+
+    border:
+        2px solid
+        var(--azul);
+
+    border-radius: 6px;
+
+    position: relative;
+}
+
+
+.parceria-checkbox
+input:checked
++
+.parceria-check-custom {
+    background: var(--azul);
+}
+
+
+.parceria-checkbox
+input:checked
++
+.parceria-check-custom::after {
+    content: "✓";
+
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--off-white);
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   BOTÃO FINAL
+======================================== */
+
+.parceria-enviar {
+    width: 100%;
+
+    min-height: 52px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: var(--azul);
+
+    color: var(--off-white);
+
+    font-family: var(--fonte-texto);
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.parceria-enviar:hover {
+    background: var(--verde);
+
+    transform: translateY(-2px);
+}
+
+
+.parceria-enviar span {
+    transition: transform 0.25s ease;
+}
+
+
+.parceria-enviar:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   SUCESSO
+======================================== */
+
+.parceria-sucesso {
+    display: none;
+
+    padding:
+        35px
+        10px
+        15px;
+
+    text-align: center;
+}
+
+
+.parceria-sucesso.ativo {
+    display: block;
+
+    animation:
+        parceriaSucessoEntrada
+        0.5s ease;
+}
+
+
+@keyframes parceriaSucessoEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.parceria-sucesso-icone {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto
+        20px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--azul);
+
+    color: var(--off-white);
+
+    font-size: 32px;
+}
+
+
+.parceria-sucesso p {
+    margin:
+        0 auto
+        25px;
+}
+
+
+.parceria-voltar {
+    min-height: 46px;
+
+    padding: 10px 22px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: var(--verde);
+
+    color: var(--off-white);
+
+    font-family: var(--fonte-texto);
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.parceria-voltar:hover {
+    background: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .parceria-modal {
+        padding: 12px;
+    }
+
+
+    .parceria-modal-box {
+        padding:
+            36px
+            22px
+            28px;
+
+        border-radius: 26px;
+    }
+
+
+    .parceria-modal-header {
+        padding-right: 35px;
+    }
+
+
+    .parceria-modal-header h2 {
+        font-size: 36px;
+    }
+
+
+    .parceria-campos-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .parceria-opcoes {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ========================================
+   MODAL COMPARTILHAR
+======================================== */
+
+.compartilhar-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 24px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.compartilhar-modal.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========================================
+   FUNDO
+======================================== */
+
+.compartilhar-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(29, 57, 48, 0.72);
+
+    backdrop-filter: blur(7px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+
+.compartilhar-modal.ativo
+.compartilhar-overlay {
+    opacity: 1;
+}
+
+
+/* ========================================
+   JANELA
+======================================== */
+
+.compartilhar-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(620px, 100%);
+
+    max-height:
+        calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    padding:
+        42px
+        44px;
+
+    background:
+        var(--off-white);
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(21, 50, 40, 0.25);
+
+    transform:
+        translateY(30px)
+        scale(0.96);
+
+    opacity: 0;
+
+    transition:
+        transform 0.4s
+        cubic-bezier(.2,.8,.2,1),
+        opacity 0.35s ease;
+}
+
+
+.compartilhar-modal.ativo
+.compartilhar-box {
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   FECHAR
+======================================== */
+
+.compartilhar-fechar {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(107, 142, 114, 0.12);
+
+    color: var(--verde);
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.compartilhar-fechar:hover {
+    background:
+        var(--amarelo);
+
+    transform:
+        rotate(5deg);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.compartilhar-header {
+    margin-bottom: 30px;
+
+    padding-right: 35px;
+}
+
+
+.compartilhar-tag {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: var(--verde);
+}
+
+
+.compartilhar-header h2 {
+    margin:
+        0
+        0
+        14px;
+
+    font-family:
+        var(--fonte-titulo);
+
+    font-size:
+        clamp(
+            36px,
+            4vw,
+            48px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.04;
+
+    color: #315d50;
+}
+
+
+.compartilhar-header p {
+    margin: 0;
+
+    max-width: 500px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: #4b6259;
+}
+
+
+/* ========================================
+   OPÇÕES
+======================================== */
+
+.compartilhar-opcoes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+}
+
+
+.compartilhar-opcao {
+    min-height: 115px;
+
+    padding: 16px 10px;
+
+    border:
+        2px solid
+        rgba(107, 142, 114, 0.18);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.35);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #315d50;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.compartilhar-opcao:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--verde);
+
+    box-shadow:
+        0 12px 25px
+        rgba(49, 93, 80, 0.12);
+}
+
+
+/* ========================================
+   ÍCONES
+======================================== */
+
+.compartilhar-icone {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--off-white);
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.compartilhar-opcao:hover
+.compartilhar-icone {
+    transform:
+        scale(1.08)
+        rotate(3deg);
+}
+
+
+/* CORES DE HOVER */
+
+.compartilhar-whatsapp:hover {
+    background:
+        rgba(107, 142, 114, 0.12);
+}
+
+
+.compartilhar-facebook:hover {
+    background:
+        rgba(121, 184, 209, 0.14);
+}
+
+
+.compartilhar-instagram:hover {
+    background:
+        rgba(121, 184, 209, 0.16);
+}
+
+
+
+/* ========================================
+   FEEDBACK
+======================================== */
+
+.compartilhar-feedback {
+    position: absolute;
+
+    left: 50%;
+    bottom: 22px;
+
+    padding:
+        9px
+        16px;
+
+    border-radius: 999px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--off-white);
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translateX(-50%)
+        translateY(10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.compartilhar-feedback.ativo {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .compartilhar-modal {
+        padding: 12px;
+    }
+
+
+    .compartilhar-box {
+        padding:
+            36px
+            22px
+            28px;
+
+        border-radius: 26px;
+    }
+
+
+    .compartilhar-header h2 {
+        font-size: 36px;
+    }
+
+
+    .compartilhar-opcoes {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .compartilhar-opcao {
+        min-height: 105px;
+    }
+
+
+    .compartilhar-link {
+        flex-direction: column;
+    }
+
+
+    .compartilhar-link input,
+    .compartilhar-link button {
+        width: 100%;
+    }
+
+}
+
+/* ========================================
+   MODAL EVENTOS + VOLUNTARIADO
+======================================== */
+
+.eventos-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.eventos-modal.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* OVERLAY */
+
+.eventos-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(29, 57, 48, 0.74);
+
+    backdrop-filter: blur(7px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+
+.eventos-modal.ativo
+.eventos-overlay {
+    opacity: 1;
+}
+
+
+/* ========================================
+   BOX PRINCIPAL
+======================================== */
+
+.eventos-modal-box {
+    position: relative;
+    z-index: 2;
+
+    width: min(900px, 100%);
+
+    max-height:
+        calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    padding:
+        42px
+        46px;
+
+    background:
+        var(--off-white);
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(21, 50, 40, 0.27);
+
+    transform:
+        translateY(35px)
+        scale(0.96);
+
+    opacity: 0;
+
+    transition:
+        transform 0.4s
+        cubic-bezier(.2,.8,.2,1),
+        opacity 0.35s ease;
+}
+
+
+.eventos-modal.ativo
+.eventos-modal-box {
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   FECHAR
+======================================== */
+
+.eventos-fechar {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(107, 142, 114, 0.13);
+
+    color:
+        var(--verde);
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.eventos-fechar:hover {
+    background:
+        var(--amarelo);
+
+    transform:
+        rotate(5deg);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.eventos-header {
+    padding-right: 45px;
+
+    margin-bottom: 36px;
+}
+
+
+.eventos-tag {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color:
+        var(--verde);
+}
+
+
+.eventos-header h2,
+.voluntariado-sucesso h2 {
+    margin:
+        0
+        0
+        14px;
+
+    max-width: 600px;
+
+    font-family:
+        var(--fonte-titulo);
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            50px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.04;
+
+    color:
+        #315d50;
+}
+
+
+.eventos-header p,
+.voluntariado-sucesso p {
+    margin: 0;
+
+    max-width: 580px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color:
+        #4b6259;
+}
+
+
+/* ========================================
+   TÍTULOS DAS ÁREAS
+======================================== */
+
+.eventos-subtag {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 11px;
+
+    letter-spacing: 1.7px;
+
+    color:
+        var(--azul);
+}
+
+
+.eventos-secao-topo {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.eventos-secao-topo h3,
+.voluntariado-intro h3 {
+    margin: 0;
+
+    font-family:
+        var(--fonte-titulo);
+
+    font-size: 31px;
+
+    font-weight: 400;
+
+    color:
+        #315d50;
+}
+
+
+.eventos-secao-topo > p {
+    margin: 0;
+
+    max-width: 280px;
+
+    text-align: right;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 11px;
+
+    color:
+        #708078;
+}
+
+
+/* ========================================
+   LISTA DE EVENTOS
+======================================== */
+
+.eventos-lista {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 38px;
+}
+
+
+.evento-card {
+    display: grid;
+
+    grid-template-columns:
+        76px
+        minmax(0, 1fr)
+        auto;
+
+    gap: 18px;
+
+    align-items: center;
+
+    padding: 18px;
+
+    border:
+        2px solid
+        rgba(107, 142, 114, 0.13);
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.36);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.evento-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(121, 184, 209, 0.55);
+
+    box-shadow:
+        0 12px 26px
+        rgba(49, 93, 80, 0.08);
+}
+
+
+/* DATA */
+
+.evento-data {
+    width: 70px;
+    height: 76px;
+
+    border-radius: 18px;
+
+    background:
+        var(--azul);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color:
+        var(--off-white);
+}
+
+
+.evento-data strong {
+    font-family:
+        var(--fonte-titulo);
+
+    font-size: 31px;
+
+    line-height: 1;
+}
+
+
+.evento-data span {
+    margin-top: 3px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* CONTEÚDO */
+
+.evento-tipo {
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color:
+        var(--verde);
+}
+
+
+.evento-conteudo h4 {
+    margin:
+        3px
+        0
+        5px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 16px;
+
+    color:
+        #315d50;
+}
+
+
+.evento-conteudo p {
+    margin:
+        0
+        0
+        7px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    color:
+        #60736b;
+}
+
+
+.evento-info {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.evento-info span {
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 10px;
+
+    color:
+        #829089;
+}
+
+
+/* BOTÃO EVENTO */
+
+.evento-participar {
+    min-height: 40px;
+
+    padding:
+        8px
+        15px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--off-white);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.evento-participar:hover {
+    background:
+        var(--amarelo);
+
+    color:
+        #315d50;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.evento-participar span {
+    transition:
+        transform 0.25s ease;
+}
+
+
+.evento-participar:hover span {
+    transform:
+        translateX(3px);
+}
+
+
+/* ========================================
+   VOLUNTARIADO
+======================================== */
+
+.voluntariado-area {
+    padding-top: 32px;
+
+    border-top:
+        1px solid
+        rgba(107, 142, 114, 0.18);
+}
+
+
+.voluntariado-intro {
+    margin-bottom: 24px;
+}
+
+
+.voluntariado-intro p {
+    margin:
+        9px
+        0
+        0;
+
+    max-width: 580px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color:
+        #60736b;
+}
+
+
+/* FORM */
+
+.voluntariado-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.voluntariado-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+.voluntariado-campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.voluntariado-campo label {
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color:
+        #315d50;
+}
+
+
+.voluntariado-campo input,
+.voluntariado-campo select,
+.voluntariado-campo textarea {
+    width: 100%;
+
+    padding:
+        13px
+        14px;
+
+    border:
+        2px solid
+        rgba(107, 142, 114, 0.21);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.42);
+
+    outline: 0;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 14px;
+
+    color:
+        #315d50;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.voluntariado-campo textarea {
+    resize: vertical;
+
+    min-height: 95px;
+}
+
+
+.voluntariado-campo input:focus,
+.voluntariado-campo select:focus,
+.voluntariado-campo textarea:focus {
+    border-color:
+        var(--verde);
+
+    background:
+        white;
+}
+
+
+/* ========================================
+   ÁREAS
+======================================== */
+
+.voluntariado-opcoes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 9px;
+}
+
+
+.voluntariado-opcao {
+    min-height: 44px;
+
+    padding: 8px;
+
+    border:
+        2px solid
+        rgba(107, 142, 114, 0.25);
+
+    border-radius: 14px;
+
+    background:
+        transparent;
+
+    color:
+        #315d50;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.voluntariado-opcao:hover {
+    border-color:
+        var(--verde);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.voluntariado-opcao.ativo {
+    background:
+        var(--amarelo);
+
+    border-color:
+        var(--amarelo);
+}
+
+
+/* ========================================
+   CHECKBOX
+======================================== */
+
+.voluntariado-checkbox {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    color:
+        #4b6259;
+
+    cursor: pointer;
+}
+
+
+.voluntariado-checkbox input {
+    position: absolute;
+
+    opacity: 0;
+}
+
+
+.voluntariado-check {
+    width: 19px;
+    height: 19px;
+
+    flex: 0 0 auto;
+
+    border:
+        2px solid
+        var(--verde);
+
+    border-radius: 6px;
+
+    position: relative;
+}
+
+
+.voluntariado-checkbox
+input:checked
++
+.voluntariado-check {
+    background:
+        var(--verde);
+}
+
+
+.voluntariado-checkbox
+input:checked
++
+.voluntariado-check::after {
+    content: "✓";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    color:
+        var(--off-white);
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   ENVIAR
+======================================== */
+
+.voluntariado-enviar {
+    width: 100%;
+
+    min-height: 52px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--off-white);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.voluntariado-enviar:hover {
+    background:
+        var(--azul);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.voluntariado-enviar span {
+    transition:
+        transform 0.25s ease;
+}
+
+
+.voluntariado-enviar:hover span {
+    transform:
+        translateX(4px);
+}
+
+
+/* ========================================
+   SUCESSO
+======================================== */
+
+.voluntariado-sucesso {
+    display: none;
+
+    padding:
+        45px
+        15px
+        20px;
+
+    text-align: center;
+}
+
+
+.voluntariado-sucesso.ativo {
+    display: block;
+
+    animation:
+        voluntariadoSucesso
+        0.5s ease;
+}
+
+
+@keyframes voluntariadoSucesso {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+.voluntariado-sucesso-icone {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto
+        20px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        var(--amarelo);
+
+    color:
+        var(--verde);
+
+    font-size: 31px;
+}
+
+
+.voluntariado-sucesso p {
+    margin:
+        0 auto
+        25px;
+}
+
+
+.voluntariado-voltar {
+    min-height: 46px;
+
+    padding:
+        10px
+        22px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--off-white);
+
+    font-family:
+        var(--fonte-texto);
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 720px) {
+
+    .eventos-modal {
+        padding: 12px;
+    }
+
+
+    .eventos-modal-box {
+        padding:
+            36px
+            22px
+            28px;
+
+        border-radius: 26px;
+    }
+
+
+    .evento-card {
+        grid-template-columns:
+            65px
+            1fr;
+    }
+
+
+    .evento-participar {
+        grid-column:
+            1 / -1;
+
+        justify-content: center;
+    }
+
+
+    .evento-data {
+        width: 62px;
+        height: 68px;
+    }
+
+
+    .voluntariado-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .voluntariado-opcoes {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .eventos-secao-topo {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .eventos-secao-topo > p {
+        text-align:
+            left;
     }
 
 }
